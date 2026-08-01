@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Каталог проектов — Велес Групп</title>
+    <meta
+      name="description"
+      content="Каталог проектов малоэтажных домов Велес Групп. Каждый проект открывается отдельной ссылкой."
+    >
+    <link rel="icon" href="assets/veles-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Unbounded:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="catalog">
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner">
+        <nav class="site-nav site-nav--left" aria-label="Основная навигация">
+          <a href="index.html">Главная</a>
+          <a href="index.html#rec739080578">О нас</a>
+          <a href="catalog.html" aria-current="page">Каталог</a>
+          <a href="index.html#rec737865457">Контакты</a>
+        </nav>
+
+        <a class="site-logo" href="index.html" aria-label="Велес Групп — на главную">
+          <img src="assets/veles-logo.png" alt="Велес Групп">
+        </a>
+
+        <div class="site-header__right">
+          <span class="site-header__city">Красноярск</span>
+          <a class="site-header__phone" href="tel:+79330277070">+7 (933) 027-70-70</a>
+          <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" data-nav-toggle>
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" aria-label="Мобильная навигация" data-mobile-nav>
+        <a href="index.html">Главная</a>
+        <a href="index.html#rec739080578">О нас</a>
+        <a href="catalog.html" aria-current="page">Каталог</a>
+        <a href="index.html#rec745374895">Отзывы</a>
+        <a href="index.html#rec737865457">Контакты</a>
+        <a href="tel:+79330277070">+7 (933) 027-70-70</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="catalog-hero">
+        <img class="catalog-hero__image" src="assets/house-06.jpg" alt="Проект двухэтажного дома среди леса">
+        <div class="catalog-hero__overlay"></div>
+        <div class="catalog-hero__content shell" data-reveal>
+          <p class="eyebrow eyebrow--light">Велес Групп · проекты домов</p>
+          <h1>Каталог<br><span>проектов</span></h1>
+          <p class="catalog-hero__lead">
+            Выберите основу будущего дома. Планировку, технологию и комплектацию адаптируем под участок и задачи семьи.
+          </p>
+          <a class="button button--light" href="#projects">Смотреть проекты</a>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="projects">
+        <div class="shell">
+          <div class="section-heading" data-reveal>
+            <div>
+              <p class="eyebrow">Малоэтажные дома под ключ</p>
+              <h2>Проекты Велес Групп</h2>
+            </div>
+            <p class="section-heading__copy">
+              У каждой карточки есть отдельная страница и прямая ссылка — её можно отправить семье, архитектору или менеджеру.
+            </p>
+          </div>
+
+          <div class="catalog-toolbar" data-reveal>
+            <div class="catalog-filters" role="group" aria-label="Фильтр проектов">
+              <button class="filter-button is-active" type="button" data-filter="all">Все проекты</button>
+              <button class="filter-button" type="button" data-filter="one">Одноэтажные</button>
+              <button class="filter-button" type="button" data-filter="two">Двухэтажные</button>
+            </div>
+            <p class="catalog-count" aria-live="polite" data-catalog-count></p>
+          </div>
+
+          <div class="project-grid" data-project-grid></div>
+
+          <noscript>
+            <p class="noscript-note">Для просмотра карточек включите JavaScript в браузере.</p>
+          </noscript>
+        </div>
+      </section>
+
+      <section class="proof-strip">
+        <div class="shell proof-strip__inner" data-reveal>
+          <p class="eyebrow eyebrow--light">Открытый подход</p>
+          <h2>Качество, которое<br>можно проверить</h2>
+          <p>
+            Открытые объекты и контакты клиентов для вашего контроля. Строим по стандартам и фиксируем стоимость в договоре.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-panel" id="consultation">
+        <div class="shell contact-panel__grid" data-reveal>
+          <div>
+            <p class="eyebrow">Бесплатная консультация</p>
+            <h2>Обсудим ваш участок и будущий дом</h2>
+          </div>
+          <div class="contact-panel__action">
+            <p>Ответим на вопросы по проекту, срокам и технологии строительства. Свяжемся с вами в течение 24 часов.</p>
+            <a class="button button--forest" href="tel:+79330277070">Позвонить</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__grid">
+        <a class="site-footer__logo" href="index.html">
+          <img src="assets/veles-logo.png" alt="Велес Групп">
+        </a>
+        <p>Малоэтажные дома под ключ<br>Красноярск</p>
+        <nav aria-label="Навигация в подвале">
+          <a href="index.html">Главная</a>
+          <a href="catalog.html">Каталог</a>
+          <a href="index.html#rec737865457">Контакты</a>
+        </nav>
+        <a class="site-footer__phone" href="tel:+79330277070">+7 (933) 027-70-70</a>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+    <script src="script.js" defer></script>
+    <script src="catalog.js" defer></script>
+  </body>
+</html>

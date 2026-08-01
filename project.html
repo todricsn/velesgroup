@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Проект дома — Велес Групп</title>
+    <meta name="description" content="Проект малоэтажного дома Велес Групп.">
+    <link rel="icon" href="assets/veles-logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Unbounded:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-page="project">
+    <header class="site-header" data-site-header>
+      <div class="site-header__inner">
+        <nav class="site-nav site-nav--left" aria-label="Основная навигация">
+          <a href="index.html">Главная</a>
+          <a href="index.html#rec739080578">О нас</a>
+          <a href="catalog.html" aria-current="page">Каталог</a>
+          <a href="index.html#rec737865457">Контакты</a>
+        </nav>
+
+        <a class="site-logo" href="index.html" aria-label="Велес Групп — на главную">
+          <img src="assets/veles-logo.png" alt="Велес Групп">
+        </a>
+
+        <div class="site-header__right">
+          <span class="site-header__city">Красноярск</span>
+          <a class="site-header__phone" href="tel:+79330277070">+7 (933) 027-70-70</a>
+          <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" data-nav-toggle>
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-nav" aria-label="Мобильная навигация" data-mobile-nav>
+        <a href="index.html">Главная</a>
+        <a href="index.html#rec739080578">О нас</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="index.html#rec745374895">Отзывы</a>
+        <a href="index.html#rec737865457">Контакты</a>
+        <a href="tel:+79330277070">+7 (933) 027-70-70</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-hero">
+        <img class="project-hero__image" data-project-image src="assets/house-01.jpg" alt="Проект дома Велес Групп">
+        <div class="project-hero__overlay"></div>
+        <div class="shell project-hero__content" data-reveal>
+          <a class="back-link" href="catalog.html">← Каталог проектов</a>
+          <p class="eyebrow eyebrow--light" data-project-category>Одноэтажный дом</p>
+          <h1 data-project-title>Проект ВГ–01</h1>
+          <p class="project-hero__lead" data-project-summary>
+            Проект малоэтажного дома с индивидуальной адаптацией планировки.
+          </p>
+          <div class="project-hero__actions">
+            <a class="button button--light" href="#consultation">Обсудить проект</a>
+            <button class="button button--glass" type="button" data-share-current>Скопировать ссылку</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-overview">
+        <div class="shell project-overview__grid">
+          <div data-reveal>
+            <p class="eyebrow">О проекте</p>
+            <h2 data-project-heading>Дом, который адаптируется под ваш участок</h2>
+          </div>
+          <div class="project-overview__copy" data-reveal>
+            <p data-project-description></p>
+            <p>
+              Площадь, планировка, технология и стоимость рассчитываются после обсуждения участка и выбранной комплектации.
+            </p>
+          </div>
+        </div>
+
+        <div class="shell project-facts" data-reveal>
+          <article>
+            <span>01</span>
+            <h3>Прозрачная цена</h3>
+            <p>Фиксируем стоимость в договоре и заранее просчитываем состав работ.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Срок 4–8 месяцев</h3>
+            <p>Работаем по календарному графику собственной строительной бригадой.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Гарантия до 10 лет</h3>
+            <p>Даём письменную гарантию на конструктивные элементы дома.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-gallery-section">
+        <div class="shell">
+          <div class="section-heading" data-reveal>
+            <div>
+              <p class="eyebrow">Внешний вид</p>
+              <h2>Ракурсы проекта</h2>
+            </div>
+            <p class="section-heading__copy">Фотографии из материалов Велес Групп. Состав галереи будет уточнён при наполнении каталога.</p>
+          </div>
+          <div class="project-gallery" data-project-gallery></div>
+        </div>
+      </section>
+
+      <section class="included-section">
+        <div class="shell included-section__grid">
+          <div data-reveal>
+            <p class="eyebrow eyebrow--light">Дом под ключ</p>
+            <h2>Берём на себя весь цикл</h2>
+          </div>
+          <ol data-reveal>
+            <li><span>01</span>Геология участка и подготовка исходных данных</li>
+            <li><span>02</span>Проектирование и согласование планировки</li>
+            <li><span>03</span>Строительство и инженерные коммуникации</li>
+            <li><span>04</span>Финишная отделка и благоустройство территории</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contact-panel" id="consultation">
+        <div class="shell contact-panel__grid" data-reveal>
+          <div>
+            <p class="eyebrow">Запросить консультацию</p>
+            <h2>Рассчитаем проект для вашего участка</h2>
+          </div>
+          <div class="contact-panel__action">
+            <p>Обсудим планировку, технологию, сроки и комплектацию. Свяжемся с вами в течение 24 часов.</p>
+            <a class="button button--forest" href="tel:+79330277070">Позвонить</a>
+          </div>
+        </div>
+      </section>
+
+      <nav class="project-pagination shell" aria-label="Другие проекты" data-reveal>
+        <a href="catalog.html">Все проекты</a>
+        <a href="project.html?project=vg-02" data-next-project>Следующий проект →</a>
+      </nav>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__grid">
+        <a class="site-footer__logo" href="index.html">
+          <img src="assets/veles-logo.png" alt="Велес Групп">
+        </a>
+        <p>Малоэтажные дома под ключ<br>Красноярск</p>
+        <nav aria-label="Навигация в подвале">
+          <a href="index.html">Главная</a>
+          <a href="catalog.html">Каталог</a>
+          <a href="index.html#rec737865457">Контакты</a>
+        </nav>
+        <a class="site-footer__phone" href="tel:+79330277070">+7 (933) 027-70-70</a>
+      </div>
+    </footer>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+    <script src="script.js" defer></script>
+    <script src="project.js" defer></script>
+  </body>
+</html>

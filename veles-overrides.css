@@ -1,0 +1,472 @@
+:root {
+  --veles-forest: #153d2a;
+  --veles-forest-deep: #0b2c1d;
+  --veles-leaf: #4f765a;
+  --veles-sage: #b9c9b9;
+  --veles-mist: #edf2ec;
+  --veles-paper: #fbfcf8;
+  --veles-white: #ffffff;
+  --veles-ink: #142018;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.t-body,
+#allrecords,
+.t-records {
+  background: var(--veles-paper);
+  color: var(--veles-ink);
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.t-title,
+.t-heading,
+.t-name,
+.tn-elem[data-elem-type='text'] .tn-atom {
+  letter-spacing: -0.02em;
+}
+
+/* Tilda header: same geometry, light forest treatment. */
+#nav737865899 {
+  background-color: rgba(251, 252, 248, 0.92) !important;
+  border-bottom: 1px solid rgba(21, 61, 42, 0.12);
+  box-shadow: 0 10px 30px rgba(13, 44, 29, 0.06) !important;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+#rec737865899 .t-menu__link-item,
+#rec737865899 .t446__rightwrapper,
+#rec737865899 .t446__rightwrapper a {
+  color: var(--veles-forest-deep) !important;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-weight: 550 !important;
+}
+
+#rec737865899 .t446__imglogo {
+  width: 170px !important;
+  max-width: 170px !important;
+  height: 70px !important;
+  object-fit: contain;
+}
+
+#rec737865899 .t-sociallinks__svg path,
+#rec737865418 .t-sociallinks__svg path,
+#rec737865457 .t-sociallinks__svg path {
+  fill: var(--veles-forest) !important;
+}
+
+#rec737865418 .t450__burger_bg,
+#rec737865418 .t450__menu__content {
+  background-color: rgba(251, 252, 248, 0.97) !important;
+}
+
+#rec737865418 .t450__burger span,
+#rec737865418 .t450__burger span::before,
+#rec737865418 .t450__burger span::after {
+  background-color: var(--veles-forest) !important;
+}
+
+#rec737865418 .t-menuburger span {
+  background-color: var(--veles-forest) !important;
+}
+
+.veles-mobile-brand {
+  position: fixed;
+  z-index: 100001;
+  top: 15px;
+  left: 15px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 196px;
+  height: 48px;
+  padding: 2px 12px;
+  background: rgba(251, 252, 248, 0.9);
+  border: 1px solid rgba(21, 61, 42, 0.1);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.veles-mobile-brand img {
+  width: 172px;
+  height: 44px;
+  object-fit: contain;
+  transform: scale(1.42);
+}
+
+#rec737865418 .t-menu__link-item,
+#rec737865418 .t450__right_descr,
+#rec737865418 .t450__right_descr a {
+  color: var(--veles-forest-deep) !important;
+}
+
+/* Keep the original animated preloader record and replace only its artwork. */
+#rec737865419 .t396__elem,
+#rec737865419 .t396__carrier,
+#rec737865419 .t396__filter {
+  visibility: hidden !important;
+}
+
+#rec737865419 .t396__artboard {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(185, 201, 185, 0.36), transparent 34%),
+    var(--veles-paper) !important;
+}
+
+.veles-preloader-logo {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  width: min(560px, 78vw);
+  transform: translate(-50%, -50%);
+  visibility: visible !important;
+  animation: veles-logo-reveal 2.5s cubic-bezier(0.2, 0.75, 0.22, 1) both;
+}
+
+.veles-preloader-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes veles-logo-reveal {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translate(-50%, -47%) scale(0.97);
+  }
+  48% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Hero keeps the exact Zero Block layout and motion from the export. */
+#rec843022128 .t396__carrier {
+  background-image: url('assets/house-09.jpg') !important;
+  background-position: center center !important;
+}
+
+#rec843022128 .t396__filter {
+  background: linear-gradient(
+    90deg,
+    rgba(8, 37, 23, 0.72) 0%,
+    rgba(18, 54, 35, 0.43) 45%,
+    rgba(255, 255, 255, 0.08) 72%,
+    rgba(13, 45, 28, 0.2) 100%
+  ) !important;
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734688090232'] .tn-atom {
+  color: #fff !important;
+  font-family: 'Unbounded', 'Montserrat', Arial, sans-serif !important;
+  font-size: 54px !important;
+  line-height: 1.05 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.045em !important;
+  text-shadow: 0 4px 30px rgba(6, 29, 18, 0.28);
+}
+
+@media (min-width: 1200px) {
+  #rec843022128 .tn-elem[data-elem-id='1734688090232'] {
+    width: 690px !important;
+  }
+}
+
+#rec843022128 .veles-hero-accent {
+  color: #dce8da;
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734699850441'] .tn-atom {
+  color: #fff !important;
+  max-width: 620px;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+  font-size: 18px !important;
+  line-height: 1.5 !important;
+  font-weight: 450 !important;
+  text-transform: none !important;
+  text-shadow: 0 2px 18px rgba(6, 29, 18, 0.42);
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734687515140'] .tn-atom {
+  background: rgba(250, 252, 247, 0.78) !important;
+  border: 1px solid rgba(255, 255, 255, 0.58) !important;
+  box-shadow: 0 22px 70px rgba(10, 48, 29, 0.2) !important;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734687375840'] .tn-atom,
+#rec843022128 .tn-elem[data-elem-id='1734688710331'] .tn-atom {
+  color: var(--veles-forest-deep) !important;
+  font-family: 'Montserrat', Arial, sans-serif !important;
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734687375840'] .tn-atom {
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+}
+
+#rec843022128 .t-submit,
+#rec843022128 .tn-elem[data-elem-id='1657823210914'] .tn-atom {
+  background-color: var(--veles-forest) !important;
+  border-color: var(--veles-forest) !important;
+  color: #fff !important;
+  box-shadow: 0 12px 34px rgba(9, 48, 29, 0.22) !important;
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734699727744'] .tn-atom,
+#rec843022128 .tn-elem[data-elem-id='1734699727761'] .tn-atom,
+#rec843022128 .tn-elem[data-elem-id='1734699727770'] .tn-atom {
+  color: #fff !important;
+  font-size: 15px !important;
+  font-weight: 650 !important;
+  text-shadow: 0 2px 14px rgba(5, 27, 17, 0.4);
+}
+
+/* Forest replaces only the original terracotta accent; block geometry is untouched. */
+.t-btn,
+.t-submit,
+.t-btnflex,
+[style*='background-color:#cf8f64'],
+[style*='background-color: #cf8f64'],
+[style*='background-color:rgb(207, 143, 100)'] {
+  background-color: var(--veles-forest) !important;
+  border-color: var(--veles-forest) !important;
+}
+
+[style*='color:#cf8f64'],
+[style*='color: #cf8f64'],
+[style*='color:rgb(207, 143, 100)'] {
+  color: var(--veles-leaf) !important;
+}
+
+svg [fill='#CF8F64'],
+svg [fill='#cf8f64'] {
+  fill: var(--veles-leaf) !important;
+}
+
+svg [stroke='#CF8F64'],
+svg [stroke='#cf8f64'] {
+  stroke: var(--veles-leaf) !important;
+}
+
+#rec739096105,
+#rec739095269,
+#rec739498252,
+#rec745221192,
+#rec745374895,
+#rec745374248,
+#rec737865448 {
+  background-color: var(--veles-paper) !important;
+}
+
+#rec739096105 .tn-atom,
+#rec739095269 .tn-atom,
+#rec739498252 .tn-atom,
+#rec745221192 .tn-atom,
+#rec745374895 .tn-atom,
+#rec745374248 .tn-atom,
+#rec737865448 .t-title {
+  color: var(--veles-forest-deep) !important;
+  font-family: 'Unbounded', 'Montserrat', Arial, sans-serif !important;
+}
+
+#rec739097020 .tn-atom,
+#rec737865449 .t603__blockimg,
+#rec737865455 .t994__bgimg,
+#rec739497362 .t905__image {
+  border-radius: 16px !important;
+}
+
+#rec739097020 .t-bgimg,
+#rec737865449 .t603__blockimg,
+#rec737865455 .t994__bgimg,
+#rec739497362 .t905__image {
+  background-position: center center !important;
+  background-size: cover !important;
+}
+
+#rec744061520 {
+  background-color: var(--veles-forest-deep) !important;
+}
+
+#rec744061520 .t-cover__carrier,
+#rec744061520 .t-bgimg {
+  filter: saturate(0.8) brightness(0.72);
+}
+
+#rec744061520 .t-title,
+#rec744061520 .t-descr,
+#rec744061520 .t-text,
+#rec744061520 strong {
+  font-family: 'Unbounded', 'Montserrat', Arial, sans-serif !important;
+}
+
+#rec739080578,
+#rec739094538,
+#rec739497362,
+#rec739795413,
+#rec737865445,
+#rec745199205,
+#rec737865457 {
+  background-color: #fff !important;
+}
+
+#rec739497362 .t905__title {
+  color: var(--veles-forest-deep) !important;
+  font-family: 'Unbounded', 'Montserrat', Arial, sans-serif !important;
+  font-size: 19px !important;
+  line-height: 1.25 !important;
+}
+
+#rec739497362 .t905__descr {
+  color: #33463a !important;
+  line-height: 1.55 !important;
+}
+
+#rec739094538 {
+  color: var(--veles-forest-deep) !important;
+}
+
+#rec747380957 .tn-atom,
+#rec745200818 .tn-atom {
+  border-color: rgba(21, 61, 42, 0.14) !important;
+}
+
+#rec737865458 {
+  background-color: var(--veles-forest-deep) !important;
+}
+
+#rec737865458 .t464__logo {
+  width: 210px !important;
+  max-width: 210px !important;
+  height: auto !important;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+#rec737865458 .t464__title,
+#rec737865458 .t464__descr,
+#rec737865458 .t464__descr a,
+#rec737865458 .t464__text {
+  color: #f3f7f1 !important;
+}
+
+#rec737865459 .t890__arrow:hover svg rect,
+#rec737865459 .t890__arrow:focus-visible svg rect {
+  fill: var(--veles-forest) !important;
+}
+
+#rec737865461 .t886__wrapper {
+  background: rgba(251, 252, 248, 0.96) !important;
+  border: 1px solid rgba(21, 61, 42, 0.12);
+  box-shadow: 0 18px 50px rgba(9, 38, 24, 0.14) !important;
+}
+
+#rec737865461 {
+  display: none !important;
+}
+
+#rec737865461 .t886__btn {
+  color: #fff !important;
+}
+
+[data-project-url] {
+  cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+  .veles-mobile-brand {
+    display: flex;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734688090232'] .tn-atom {
+    font-size: 48px !important;
+  }
+
+  #rec737865899 .t446__imglogo {
+    width: 150px !important;
+    max-width: 150px !important;
+  }
+}
+
+@media (max-width: 959px) {
+  #rec843022128 .t396__carrier {
+    background-position: 62% center !important;
+  }
+
+  #rec843022128 .t396__filter {
+    background: linear-gradient(180deg, rgba(8, 37, 23, 0.6), rgba(8, 37, 23, 0.25)) !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734688090232'] .tn-atom {
+    font-size: 42px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699850441'] .tn-atom {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 639px) {
+  #rec843022128 .tn-elem[data-elem-id='1734688090232'] .tn-atom {
+    font-size: 30px !important;
+    line-height: 1.1 !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699850441'] .tn-atom {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  .veles-preloader-logo {
+    width: 86vw;
+  }
+}
+
+@media (max-width: 479px) {
+  #rec843022128 .tn-elem[data-elem-id='1734688090232'] {
+    left: calc(50% - 160px + -25px) !important;
+    width: 370px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734688090232'] .tn-atom {
+    font-size: 27px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734687515140'] {
+    height: 360px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734688710331'] {
+    top: 615px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1657823210914'] {
+    display: none !important;
+  }
+
+  .veles-mobile-brand {
+    width: 188px;
+  }
+
+  .veles-mobile-brand img {
+    width: 164px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veles-preloader-logo {
+    animation: none;
+  }
+}

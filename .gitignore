@@ -1,0 +1,15 @@
+.DS_Store
+.playwright-cli/
+
+# Исходные тяжёлые фотографии уже подготовлены в assets/house-*.jpg.
+reference/user-photos/
+
+# Служебная исходная копия страницы; рабочая версия находится в корне.
+reference/geography-house.ru/index.html
+
+# Черновые изображения предыдущего прототипа.
+assets/dark-house.png
+assets/forest-house.jpg
+assets/forest-sauna.png
+assets/pine-house.png
+assets/veles-logo-source.png

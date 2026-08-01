@@ -1,0 +1,12 @@
+.t-store__card__price:before,
+.t-store__card__price_old:before {
+    font-size: 12px;
+    vertical-align: bottom;
+    padding-right: 2px;
+}
+.t-store__card__price:before {content: "От "}
+.t-store__card__price_old { color: #000}
+.t-store__card__price-item {font-size: 16px}
+.t-store__card__price-value {font-weight: 800}
+
+}
