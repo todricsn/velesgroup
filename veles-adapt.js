@@ -152,7 +152,11 @@
     );
     setAtomHTML('rec843022128', '1657823210914', 'ЗАПРОСИТЬ КОНСУЛЬТАЦИЮ');
     setAtomHTML('rec843022128', '1734687375840', 'БЕСПЛАТНАЯ АРХИТЕКТУРНАЯ КОНСУЛЬТАЦИЯ');
-    setAtomHTML('rec843022128', '1734688710331', 'Гарантия до 10 лет · ответим за 24 часа');
+    setAtomHTML(
+      'rec843022128',
+      '1734688710331',
+      '<strong>Гарантия до 10 лет</strong><span>Ответим в течение 24 часов</span>'
+    );
     setAtomHTML('rec843022128', '1734699727744', 'Проекты домов');
     setAtomHTML('rec843022128', '1734699727761', 'Строительство под ключ');
     setAtomHTML('rec843022128', '1734699727770', 'Реализованные проекты');
@@ -218,6 +222,21 @@
       form.classList.add('is-sent');
       qs('.veles-form-status', form).textContent =
         'Заявка готова. Подключим отправку при переносе на WordPress.';
+    });
+  }
+
+  function positionHeroComposition() {
+    const artboard = qs('#rec843022128 .t396__artboard');
+    const card = qs('#rec843022128 .tn-elem[data-elem-id="1734687515140"]');
+    const note = qs('#rec843022128 .tn-elem[data-elem-id="1734688710331"]');
+    if (!artboard || !card || !note) return;
+
+    window.requestAnimationFrame(() => {
+      const noteWidth = note.offsetWidth;
+      const top = card.offsetTop + card.offsetHeight - note.offsetHeight - 18;
+      const left = card.offsetLeft + (card.offsetWidth - noteWidth) / 2;
+      note.style.setProperty('top', `${Math.round(top)}px`, 'important');
+      note.style.setProperty('left', `${Math.round(left)}px`, 'important');
     });
   }
 
@@ -301,6 +320,9 @@
     ];
 
     exactReplacements.forEach(([oldText, newText]) => replaceExactText(oldText, newText));
+
+    const builtProjectsTitle = qs('#rec737865448 .t015__title');
+    if (builtProjectsTitle) builtProjectsTitle.textContent = 'Реализованные проекты Велес Групп';
 
     const benefitDescriptions = [
       'Мы фиксируем стоимость в договоре, и она не меняется в процессе стройки. Никаких неожиданных доплат — всё просчитываем на берегу.',
@@ -459,10 +481,87 @@
     });
   }
 
+  function refineLegacyBlocks() {
+    const decorativeCompanyWord = qs(
+      '#rec739498252 .tn-elem[data-elem-id="1715090632068"]'
+    );
+    if (decorativeCompanyWord) decorativeCompanyWord.remove();
+
+    const reviewSlider = qs('#rec737865453');
+    if (reviewSlider && reviewSlider.dataset.velesReviewClean !== 'true') {
+      const reviewItems = qsa('.t994__item', reviewSlider);
+      const instagramSlide = reviewItems.find((item) =>
+        item.textContent.includes('Больше отзывов вы сможете найти')
+      );
+      if (instagramSlide) {
+        const index = reviewItems.indexOf(instagramSlide);
+        instagramSlide.remove();
+        const loader = qsa('.t994__loader', reviewSlider)[index];
+        if (loader) loader.remove();
+      }
+      reviewSlider.dataset.velesReviewClean = 'true';
+      window.setTimeout(() => {
+        if (typeof window.t994_goToSlide === 'function') window.t994_goToSlide(reviewSlider, 0);
+      }, 120);
+    }
+  }
+
+  function installInfiniteProjectsCarousel() {
+    const slider = qs('#rec737865455');
+    const track = qs('.t994__slidecontainer', slider);
+    if (!slider || !track || slider.dataset.velesInfinite === 'true') return;
+
+    slider.dataset.velesInfinite = 'true';
+    track.dataset.sliderWithCycle = 'true';
+
+    const move = (direction) => {
+      const items = qsa('.t994__item', slider);
+      if (!items.length || typeof window.t994_goToSlide !== 'function') return;
+      const current = Number(track.dataset.slidePos || 0);
+      const next = direction === 'left'
+        ? (current - 1 + items.length) % items.length
+        : (current + 1) % items.length;
+      window.t994_goToSlide(slider, next);
+    };
+
+    const rightArrow = qs('.t-slds__arrow_wrapper-right', slider);
+    const leftArrow = qs('.t-slds__arrow_wrapper-left', slider);
+    if (rightArrow) {
+      rightArrow.addEventListener('click', (event) => {
+        const count = qsa('.t994__item', slider).length;
+        if (Number(track.dataset.slidePos || 0) >= count - 1) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          move('right');
+        }
+      }, true);
+    }
+    if (leftArrow) {
+      leftArrow.addEventListener('click', (event) => {
+        if (Number(track.dataset.slidePos || 0) <= 0) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          move('left');
+        }
+      }, true);
+    }
+
+    let paused = false;
+    slider.addEventListener('mouseenter', () => { paused = true; });
+    slider.addEventListener('mouseleave', () => { paused = false; });
+    slider.addEventListener('focusin', () => { paused = true; });
+    slider.addEventListener('focusout', () => { paused = false; });
+
+    window.setInterval(() => {
+      if (!paused && !document.hidden) move('right');
+    }, 5000);
+  }
+
   function runAdaptation() {
     installBranding();
     adaptHero();
     installHeroForm();
+    positionHeroComposition();
     adaptTexts();
     installAboutFacts();
     adaptLinks();
@@ -472,6 +571,8 @@
     simplifyLocations();
     installMortgageDetails();
     installProjectClicks();
+    refineLegacyBlocks();
+    installInfiniteProjectsCarousel();
   }
 
   if (document.readyState === 'loading') {
@@ -484,4 +585,6 @@
     runAdaptation();
     window.setTimeout(runAdaptation, 900);
   });
+
+  window.addEventListener('resize', positionHeroComposition);
 })();
