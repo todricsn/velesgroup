@@ -10,8 +10,8 @@
       categoryLabel: 'Одноэтажный дом',
       summary: 'Одноэтажный дом с широкой крытой террасой.',
       description: 'Светлый малоэтажный дом с большой террасой и спокойной горизонтальной архитектурой.',
-      image: 'assets/house-01.jpg',
-      gallery: ['assets/house-01.jpg', 'assets/house-02.jpg', 'assets/house-07.jpg']
+      image: 'assets/projects/veles-project-01.jpg',
+      gallery: ['assets/projects/veles-project-01.jpg', 'assets/projects/veles-project-02.jpg', 'assets/projects/veles-project-07.jpg']
     },
     {
       id: 'vg-02',
@@ -21,8 +21,8 @@
       categoryLabel: 'Одноэтажный дом',
       summary: 'Компактный одноэтажный дом с отдельным входным узлом.',
       description: 'Практичный одноэтажный объём с простой геометрией, двускатной крышей и двумя входами.',
-      image: 'assets/house-02.jpg',
-      gallery: ['assets/house-02.jpg', 'assets/house-01.jpg', 'assets/house-08.jpg']
+      image: 'assets/projects/veles-project-02.jpg',
+      gallery: ['assets/projects/veles-project-02.jpg', 'assets/projects/veles-project-01.jpg', 'assets/projects/veles-project-08.jpg']
     },
     {
       id: 'vg-03',
@@ -32,8 +32,8 @@
       categoryLabel: 'Двухэтажный дом',
       summary: 'Двухэтажный семейный дом с крытым крыльцом.',
       description: 'Лаконичный двухэтажный дом с классической двускатной крышей и защищённой входной зоной.',
-      image: 'assets/house-03.jpg',
-      gallery: ['assets/house-03.jpg', 'assets/house-04.jpg', 'assets/house-09.jpg']
+      image: 'assets/projects/veles-project-03.jpg',
+      gallery: ['assets/projects/veles-project-03.jpg', 'assets/projects/veles-project-04.jpg', 'assets/projects/veles-project-09.jpg']
     },
     {
       id: 'vg-04',
@@ -43,8 +43,8 @@
       categoryLabel: 'Двухэтажный дом',
       summary: 'Двухэтажный дом с угловым обзором фасада.',
       description: 'Увеличенный семейный дом с двумя этажами, регулярной сеткой окон и небольшой крытой верандой.',
-      image: 'assets/house-04.jpg',
-      gallery: ['assets/house-04.jpg', 'assets/house-03.jpg', 'assets/house-06.jpg']
+      image: 'assets/projects/veles-project-04.jpg',
+      gallery: ['assets/projects/veles-project-04.jpg', 'assets/projects/veles-project-03.jpg', 'assets/projects/veles-project-06.jpg']
     },
     {
       id: 'vg-05',
@@ -54,8 +54,8 @@
       categoryLabel: 'Одноэтажный дом',
       summary: 'Дом для круглогодичного проживания с большой верандой.',
       description: 'Одноэтажный дом с высоким фронтоном, панорамным остеклением и глубокой крытой террасой.',
-      image: 'assets/house-05.jpg',
-      gallery: ['assets/house-05.jpg', 'assets/house-07.jpg', 'assets/house-01.jpg']
+      image: 'assets/projects/veles-project-05.jpg',
+      gallery: ['assets/projects/veles-project-05.jpg', 'assets/projects/veles-project-07.jpg', 'assets/projects/veles-project-01.jpg']
     },
     {
       id: 'vg-06',
@@ -65,8 +65,8 @@
       categoryLabel: 'Двухэтажный дом',
       summary: 'Двухэтажный дом с верандами на двух уровнях.',
       description: 'Дом с выразительной двухъярусной галереей, контрастным фасадом и большим количеством естественного света.',
-      image: 'assets/house-06.jpg',
-      gallery: ['assets/house-06.jpg', 'assets/house-10.jpg', 'assets/house-09.jpg']
+      image: 'assets/projects/veles-project-06.jpg',
+      gallery: ['assets/projects/veles-project-06.jpg', 'assets/projects/veles-project-10.jpg', 'assets/projects/veles-project-09.jpg']
     },
     {
       id: 'vg-07',
@@ -76,8 +76,8 @@
       categoryLabel: 'Одноэтажный дом',
       summary: 'Одноэтажный дом с каменно-деревянным фасадом.',
       description: 'Протяжённый одноэтажный дом с двумя крыльцами и сочетанием фактур дерева и камня.',
-      image: 'assets/house-07.jpg',
-      gallery: ['assets/house-07.jpg', 'assets/house-08.jpg', 'assets/house-05.jpg']
+      image: 'assets/projects/veles-project-07.jpg',
+      gallery: ['assets/projects/veles-project-07.jpg', 'assets/projects/veles-project-08.jpg', 'assets/projects/veles-project-05.jpg']
     },
     {
       id: 'vg-08',
@@ -87,8 +87,8 @@
       categoryLabel: 'Одноэтажный дом',
       summary: 'Одноэтажный дом с открытой террасой вдоль фасада.',
       description: 'Дом с вытянутой террасой, высоким навесом и прямой связью жилых помещений с участком.',
-      image: 'assets/house-08.jpg',
-      gallery: ['assets/house-08.jpg', 'assets/house-07.jpg', 'assets/house-02.jpg']
+      image: 'assets/projects/veles-project-08.jpg',
+      gallery: ['assets/projects/veles-project-08.jpg', 'assets/projects/veles-project-07.jpg', 'assets/projects/veles-project-02.jpg']
     },
     {
       id: 'vg-09',
@@ -98,8 +98,8 @@
       categoryLabel: 'Двухэтажный дом',
       summary: 'Светлый двухэтажный дом с защищённой верандой.',
       description: 'Семейный дом с контрастным первым этажом, светлым верхним объёмом и крытой входной террасой.',
-      image: 'assets/house-09.jpg',
-      gallery: ['assets/house-09.jpg', 'assets/house-03.jpg', 'assets/house-06.jpg']
+      image: 'assets/projects/veles-project-09.jpg',
+      gallery: ['assets/projects/veles-project-09.jpg', 'assets/projects/veles-project-03.jpg', 'assets/projects/veles-project-06.jpg']
     },
     {
       id: 'vg-10',
@@ -109,8 +109,8 @@
       categoryLabel: 'Двухэтажный дом',
       summary: 'Двухэтажный дом с открытыми галереями.',
       description: 'Выразительный дом с двумя уровнями открытых пространств и лёгким белым ограждением террас.',
-      image: 'assets/house-10.jpg',
-      gallery: ['assets/house-10.jpg', 'assets/house-06.jpg', 'assets/house-04.jpg']
+      image: 'assets/projects/veles-project-10.jpg',
+      gallery: ['assets/projects/veles-project-10.jpg', 'assets/projects/veles-project-06.jpg', 'assets/projects/veles-project-04.jpg']
     }
   ];
 
@@ -150,6 +150,7 @@
       const open = !nav.classList.contains('is-open');
       nav.classList.toggle('is-open', open);
       toggle.classList.toggle('is-open', open);
+      document.body.classList.toggle('nav-open', open);
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
     });
@@ -158,6 +159,7 @@
       if (!event.target.closest('a')) return;
       nav.classList.remove('is-open');
       toggle.classList.remove('is-open');
+      document.body.classList.remove('nav-open');
       toggle.setAttribute('aria-expanded', 'false');
     });
   }
