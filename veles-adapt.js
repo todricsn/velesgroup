@@ -156,11 +156,100 @@
     setAtomHTML('rec843022128', '1734699727761', 'Строительство под ключ');
     setAtomHTML('rec843022128', '1734699727770', 'Реализованные проекты');
 
+    setImage(
+      qs('#rec843022128 .tn-elem[data-elem-id="1734699727764"] img'),
+      'assets/turnkey-icon.png',
+      'Строительство дома под ключ'
+    );
+    setImage(
+      qs('#rec843022128 .tn-elem[data-elem-id="1734699727772"] img'),
+      'assets/completed-icon.png',
+      'Реализованные проекты домов'
+    );
+
     qsa('#rec843022128 .t-submit, #rec843022128 button').forEach((button) => {
       if (button.textContent.trim()) button.textContent = 'ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ';
     });
 
     setBackground(qs('#rec843022128 .t396__carrier'), 'assets/house-09.jpg');
+  }
+
+  function installHeroForm() {
+    const formAtom = qs(
+      '#rec843022128 .tn-elem[data-elem-id="1734687168225"] .tn-atom'
+    );
+    if (!formAtom || qs('.veles-consultation-form', formAtom)) return;
+
+    formAtom.innerHTML = `
+      <form class="veles-consultation-form" novalidate>
+        <label class="veles-form-field">
+          <span>Имя</span>
+          <input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+        </label>
+        <label class="veles-form-field">
+          <span>Телефон</span>
+          <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        </label>
+        <button type="submit">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
+        <p class="veles-form-status" aria-live="polite"></p>
+      </form>`;
+
+    const form = qs('.veles-consultation-form', formAtom);
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = qs('input[name="name"]', form);
+      const phone = qs('input[name="phone"]', form);
+      if (!name.value.trim() || !phone.value.trim()) {
+        form.classList.add('is-invalid');
+        qs('.veles-form-status', form).textContent = 'Заполните имя и телефон';
+        return;
+      }
+      form.classList.remove('is-invalid');
+      form.classList.add('is-sent');
+      qs('.veles-form-status', form).textContent =
+        'Заявка готова. Подключим отправку при переносе на WordPress.';
+    });
+  }
+
+  function installAboutFacts() {
+    const artboard = qs('#rec739080578 .t396__artboard');
+    if (!artboard || qs('.veles-about-facts', artboard)) return;
+
+    const facts = document.createElement('div');
+    facts.className = 'veles-about-facts';
+    facts.setAttribute('aria-label', 'Преимущества Велес Групп');
+    facts.innerHTML = `
+      <article><strong>Фиксированная цена</strong><span>Стоимость закрепляется в договоре и не меняется во время строительства.</span></article>
+      <article><strong>Срок 4–8 месяцев</strong><span>Собственная бригада работает по согласованному календарному графику.</span></article>
+      <article><strong>Гарантия до 10 лет</strong><span>Даём письменную гарантию на конструктивные элементы дома.</span></article>
+      <article><strong>Тёплый дом</strong><span>Применяем проверенные материалы и решения для сибирского климата.</span></article>`;
+    artboard.appendChild(facts);
+  }
+
+  function simplifyLocations() {
+    qsa('#rec737865899 .t-menusub, #rec737865418 .t-menusub').forEach((submenu) => {
+      submenu.remove();
+    });
+
+    qsa('#rec737865899 a, #rec737865418 a').forEach((link) => {
+      if (link.textContent.replace(/\s+/g, ' ').trim() === 'Красноярск') {
+        link.href = '#rec737865457';
+        link.removeAttribute('data-menu-submenu-hook');
+      }
+    });
+  }
+
+  function installMortgageDetails() {
+    const artboard = qs('#rec745200818 .t396__artboard');
+    if (!artboard || qs('.veles-mortgage-note', artboard)) return;
+
+    const note = document.createElement('div');
+    note.className = 'veles-mortgage-note';
+    note.innerHTML = `
+      <div><span>Ставка по кредиту</span><strong>от 6%–12%</strong></div>
+      <div><span>Срок кредита</span><strong>до 30 лет</strong></div>
+      <div><span>Максимальная сумма</span><strong>до 12 млн ₽</strong></div>`;
+    artboard.appendChild(note);
   }
 
   function adaptTexts() {
@@ -301,10 +390,10 @@
     });
 
     const processImage = qs('#rec745199205 .t500__img');
-    setImage(processImage, PROJECT_IMAGES[5]);
+    setImage(processImage, 'assets/order-phone.png', 'Заказ дома по шагам');
 
     const mortgageImage = qsa('#rec745200818 img').find((image) => image.getBoundingClientRect().width > 300);
-    setImage(mortgageImage, PROJECT_IMAGES[8]);
+    setImage(mortgageImage, 'assets/mortgage-banks.png', 'Банки-партнёры по ипотеке');
 
     setBackground(qs('#rec795784078 .t396__carrier'), PROJECT_IMAGES[4]);
   }
@@ -323,9 +412,13 @@
   function runAdaptation() {
     installBranding();
     adaptHero();
+    installHeroForm();
     adaptTexts();
+    installAboutFacts();
     adaptLinks();
     adaptImages();
+    simplifyLocations();
+    installMortgageDetails();
     installProjectClicks();
   }
 

@@ -233,6 +233,103 @@ body.t-body,
   text-shadow: 0 2px 14px rgba(5, 27, 17, 0.4);
 }
 
+#rec843022128 .tn-elem[data-elem-id='1734699727749'] img,
+#rec843022128 .tn-elem[data-elem-id='1734699727764'] img,
+#rec843022128 .tn-elem[data-elem-id='1734699727772'] img {
+  display: block !important;
+  width: 56px !important;
+  height: 56px !important;
+  object-fit: contain !important;
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734687168225'] {
+  height: 138px !important;
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734687168225'] .tn-atom {
+  overflow: visible !important;
+}
+
+.veles-consultation-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.veles-form-field {
+  position: relative;
+  display: block;
+}
+
+.veles-form-field > span {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  left: 16px;
+  color: rgba(11, 44, 29, 0.58);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.veles-consultation-form input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 56px;
+  padding: 21px 16px 7px;
+  border: 1px solid rgba(21, 61, 42, 0.2);
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--veles-forest-deep);
+  font: 500 14px/1.2 'Montserrat', Arial, sans-serif;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.veles-consultation-form input:focus {
+  border-color: var(--veles-leaf);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 0 0 3px rgba(79, 118, 90, 0.12);
+}
+
+.veles-consultation-form button {
+  grid-column: 1 / -1;
+  height: 58px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--veles-forest);
+  color: #fff;
+  font: 550 16px/1 'Montserrat', Arial, sans-serif;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.veles-consultation-form button:hover,
+.veles-consultation-form button:focus-visible {
+  background: var(--veles-forest-deep);
+  box-shadow: 0 12px 30px rgba(9, 48, 29, 0.22);
+  transform: translateY(-2px);
+}
+
+.veles-form-status {
+  grid-column: 1 / -1;
+  min-height: 16px;
+  margin: -2px 0 0;
+  color: var(--veles-forest-deep);
+  font-size: 11px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.veles-consultation-form.is-invalid input:invalid {
+  border-color: #9d5148;
+}
+
 /* Forest replaces only the original terracotta accent; block geometry is untouched. */
 .t-btn,
 .t-submit,
@@ -334,6 +431,125 @@ svg [stroke='#cf8f64'] {
   line-height: 1.55 !important;
 }
 
+.veles-about-facts {
+  position: absolute;
+  z-index: 5;
+  top: 220px;
+  left: 50%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  width: min(1180px, calc(100% - 80px));
+  transform: translateX(-50%);
+}
+
+.veles-about-facts article {
+  display: flex;
+  min-height: 104px;
+  padding: 18px 18px 16px;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px solid rgba(21, 61, 42, 0.12);
+  border-radius: 16px;
+  background: var(--veles-mist);
+  color: var(--veles-forest-deep);
+}
+
+.veles-about-facts strong {
+  margin-bottom: 9px;
+  font-family: 'Unbounded', 'Montserrat', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.25;
+  font-weight: 550;
+}
+
+.veles-about-facts span {
+  color: #3c5344;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Brand green replaces the remaining legacy orange in the adapted records. */
+#rec795784078 .tn-elem[data-elem-type='text'] .tn-atom span {
+  color: #b9d6bf !important;
+}
+
+#rec795784078 .tn-elem[data-elem-type='button'] .tn-atom,
+#rec747380957 .tn-elem[data-elem-type='button'] .tn-atom,
+#rec745200818 .tn-elem[data-elem-type='button'] .tn-atom {
+  border-color: var(--veles-forest) !important;
+  background-color: var(--veles-forest) !important;
+  color: #fff !important;
+}
+
+#rec739094538 .t254__author,
+#rec739094538 .t254__icon {
+  color: var(--veles-leaf) !important;
+}
+
+#rec739795413 .t503__img {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(19%) saturate(1331%) hue-rotate(101deg) brightness(91%) contrast(92%);
+}
+
+#rec745199205 .t500__img {
+  width: 100% !important;
+  height: 540px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+#rec745199205 .t500__imgwrapper {
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--veles-mist);
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715076908376'] img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715077482361'] {
+  display: none !important;
+}
+
+.veles-mortgage-note {
+  position: absolute;
+  z-index: 5;
+  top: 500px;
+  left: calc(50% - 600px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 570px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(21, 61, 42, 0.16);
+}
+
+.veles-mortgage-note div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.veles-mortgage-note span {
+  color: rgba(20, 32, 24, 0.52);
+  font: 500 11px/1.3 'Montserrat', Arial, sans-serif;
+}
+
+.veles-mortgage-note strong {
+  color: var(--veles-forest-deep);
+  font: 500 21px/1.1 'Unbounded', 'Montserrat', Arial, sans-serif;
+  white-space: nowrap;
+}
+
+#rec737865899 .t-menusub,
+#rec737865418 .t-menusub {
+  display: none !important;
+}
+
 #rec739094538 {
   color: var(--veles-forest-deep) !important;
 }
@@ -416,6 +632,16 @@ svg [stroke='#cf8f64'] {
   #rec843022128 .tn-elem[data-elem-id='1734699850441'] .tn-atom {
     font-size: 16px !important;
   }
+
+  .veles-about-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: calc(100% - 48px);
+  }
+
+  .veles-mortgage-note {
+    left: 7%;
+    width: 86%;
+  }
 }
 
 @media (max-width: 639px) {
@@ -431,6 +657,45 @@ svg [stroke='#cf8f64'] {
 
   .veles-preloader-logo {
     width: 86vw;
+  }
+
+  .veles-consultation-form {
+    grid-template-columns: 1fr;
+  }
+
+  .veles-consultation-form button,
+  .veles-form-status {
+    grid-column: 1;
+  }
+
+  .veles-about-facts {
+    top: 315px;
+    gap: 8px;
+    width: calc(100% - 30px);
+  }
+
+  .veles-about-facts article {
+    min-height: 96px;
+    padding: 13px;
+  }
+
+  .veles-about-facts strong {
+    font-size: 11px;
+  }
+
+  .veles-about-facts span {
+    font-size: 10px;
+  }
+
+  .veles-mortgage-note {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .veles-mortgage-note div {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
   }
 }
 
