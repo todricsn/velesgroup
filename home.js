@@ -5,7 +5,9 @@
     preloader: '[data-preloader]',
     preloaderLogo: '[data-preloader-logo]',
     modal: '[data-modal]',
-    form: '[data-home-form]'
+    form: '[data-home-form]',
+    galleryLightbox: '[data-gallery-lightbox]',
+    galleryItems: '[data-gallery-open]'
   };
 
   function completePreloader(preloader) {
@@ -143,6 +145,70 @@
     });
   }
 
+  function initGalleryLightbox() {
+    const lightbox = document.querySelector(SELECTORS.galleryLightbox);
+    const items = Array.from(document.querySelectorAll(SELECTORS.galleryItems));
+    const image = lightbox?.querySelector('[data-gallery-image]');
+    const status = lightbox?.querySelector('[data-gallery-status]');
+    const previous = lightbox?.querySelector('[data-gallery-prev]');
+    const next = lightbox?.querySelector('[data-gallery-next]');
+    const figure = lightbox?.querySelector('.lightbox__figure');
+
+    if (!lightbox || !items.length || !image || !status || !previous || !next || !figure) return;
+
+    let index = 0;
+    let touchStartX = 0;
+
+    const render = (nextIndex) => {
+      index = (nextIndex + items.length) % items.length;
+      const source = items[index].querySelector('img');
+      if (!source) return;
+
+      image.src = source.currentSrc || source.src;
+      image.alt = source.alt;
+      status.textContent = 'Фото ' + (index + 1) + ' из ' + items.length;
+    };
+
+    items.forEach((item, itemIndex) => {
+      item.addEventListener('click', () => render(itemIndex));
+    });
+
+    previous.addEventListener('click', () => render(index - 1));
+    next.addEventListener('click', () => render(index + 1));
+
+    document.addEventListener('keydown', (event) => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        render(index - 1);
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        render(index + 1);
+      }
+    });
+
+    figure.addEventListener(
+      'touchstart',
+      (event) => {
+        touchStartX = event.changedTouches[0]?.clientX || 0;
+      },
+      { passive: true }
+    );
+
+    figure.addEventListener(
+      'touchend',
+      (event) => {
+        const touchEndX = event.changedTouches[0]?.clientX || 0;
+        const distance = touchEndX - touchStartX;
+        touchStartX = 0;
+        if (Math.abs(distance) < 44) return;
+        render(index + (distance < 0 ? 1 : -1));
+      },
+      { passive: true }
+    );
+  }
+
   function initBackToTop() {
     const button = document.querySelector('[data-back-to-top]');
     if (!button) return;
@@ -182,6 +248,7 @@
     initPreloader();
     initForms();
     initModals();
+    initGalleryLightbox();
     initBackToTop();
     initMediaParallax();
   });

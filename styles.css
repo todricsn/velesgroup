@@ -174,11 +174,6 @@ a {
   transform: scaleX(1);
 }
 
-/* The phone belongs immediately to the left of the menu button. */
-.site-header__phone + .nav-toggle {
-  margin-left: -16px;
-}
-
 .nav-toggle {
   display: block;
   width: 46px;
@@ -1368,29 +1363,6 @@ body.modal-open {
   transition: opacity 620ms ease, visibility 620ms ease;
 }
 
-.site-preloader::before,
-.site-preloader::after {
-  position: absolute;
-  content: '';
-  pointer-events: none;
-}
-
-.site-preloader::before {
-  width: min(74vw, 960px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(207, 223, 207, 0.12);
-  border-radius: 50%;
-  transform: translate(30%, -18%);
-}
-
-.site-preloader::after {
-  width: min(56vw, 720px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(207, 223, 207, 0.09);
-  border-radius: 50%;
-  transform: translate(-48%, 34%);
-}
-
 .site-preloader__glow {
   position: absolute;
   inset: 0;
@@ -2266,6 +2238,16 @@ body.modal-open {
   border-radius: 16px;
 }
 
+.home-gallery__trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: zoom-in;
+}
+
 .home-gallery__item img {
   width: 100%;
   height: 100%;
@@ -2273,8 +2255,14 @@ body.modal-open {
   transition: transform 650ms cubic-bezier(0.2, 0.75, 0.2, 1);
 }
 
-.home-gallery__item:hover img {
+.home-gallery__item:hover img,
+.home-gallery__trigger:focus-visible img {
   transform: scale(1.04);
+}
+
+.home-gallery__trigger:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -4px;
 }
 
 .reviews-section {
@@ -2577,6 +2565,119 @@ body.modal-open {
   line-height: 1;
 }
 
+.modal--gallery {
+  z-index: 3100;
+}
+
+.modal--gallery .modal__backdrop {
+  background: rgba(3, 22, 13, 0.9);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.modal__dialog--gallery {
+  display: grid;
+  place-items: center;
+  width: min(100%, 1280px);
+  max-height: calc(100dvh - 48px);
+  padding: 64px 72px 40px;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  transform: translateY(16px) scale(0.985);
+}
+
+.modal.is-open .modal__dialog--gallery {
+  transform: translateY(0) scale(1);
+}
+
+.lightbox__figure {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.lightbox__image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 156px);
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 26px 76px rgba(0, 0, 0, 0.35);
+}
+
+.lightbox__caption {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.lightbox__nav,
+.modal__close--gallery {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  background: rgba(11, 44, 29, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox__nav--prev {
+  left: 8px;
+}
+
+.lightbox__nav--next {
+  right: 8px;
+}
+
+.modal__dialog--gallery .modal__close--gallery {
+  top: 4px;
+  right: 4px;
+  color: #fff;
+}
+
+.lightbox__nav:hover,
+.lightbox__nav:focus-visible,
+.modal__close--gallery:hover,
+.modal__close--gallery:focus-visible {
+  background: var(--forest);
+  border-color: #fff;
+}
+
+.lightbox__nav:focus-visible,
+.modal__close--gallery:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.lightbox__nav svg,
+.modal__close--gallery svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
 @media (max-width: 1120px) {
   .home-hero__layout {
     gap: 46px;
@@ -2725,14 +2826,6 @@ body.modal-open {
 @media (max-width: 700px) {
   .site-preloader__logo {
     width: min(82vw, 480px);
-  }
-
-  .site-preloader::before {
-    width: 112vw;
-  }
-
-  .site-preloader::after {
-    width: 90vw;
   }
 
   .section-space {
@@ -3127,5 +3220,80 @@ body.modal-open {
 
   .home-hero__form {
     padding: 18px;
+  }
+}
+
+/* Keep the phone and menu as one fixed-size group; the logo yields first. */
+@media (max-width: 700px) {
+  .site-header__inner {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .site-logo {
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .site-logo img {
+    width: min(150px, 100%);
+    max-width: 100%;
+  }
+
+  .site-header__right {
+    flex: 0 0 auto;
+    min-width: max-content;
+    margin-left: 0;
+    gap: 8px;
+  }
+
+  .site-header__phone {
+    display: inline;
+  }
+
+  .site-header__phone + .nav-toggle {
+    margin-left: 0;
+  }
+
+  .modal--gallery {
+    padding: 10px;
+  }
+
+  .modal__dialog--gallery {
+    width: 100%;
+    max-height: calc(100dvh - 20px);
+    padding: 54px 0 30px;
+  }
+
+  .lightbox__image {
+    max-height: calc(100dvh - 138px);
+    border-radius: 10px;
+  }
+
+  .lightbox__nav {
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightbox__nav--prev {
+    left: 2px;
+  }
+
+  .lightbox__nav--next {
+    right: 2px;
+  }
+
+  .modal__dialog--gallery .modal__close--gallery {
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightbox__caption {
+    padding: 0 54px;
+    text-align: center;
   }
 }
