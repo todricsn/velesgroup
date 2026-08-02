@@ -90,7 +90,7 @@
       meta.content = description ? description.content : '';
     });
     qsa('meta[property="og:image"]').forEach((meta) => {
-      meta.content = 'assets/house-09.jpg';
+      meta.content = 'assets/hero-light-forest.png';
     });
 
     qsa('link[rel="canonical"]').forEach((link) => {
@@ -172,7 +172,7 @@
       if (button.textContent.trim()) button.textContent = 'ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ';
     });
 
-    setBackground(qs('#rec843022128 .t396__carrier'), 'assets/house-09.jpg');
+    setBackground(qs('#rec843022128 .t396__carrier'), 'assets/hero-light-forest.png');
   }
 
   function installHeroForm() {
@@ -190,6 +190,10 @@
         <label class="veles-form-field">
           <span>Телефон</span>
           <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        </label>
+        <label class="veles-form-field veles-form-field--comment">
+          <span>Комментарий</span>
+          <textarea name="comment" placeholder="Расскажите, какой дом планируете"></textarea>
         </label>
         <button type="submit">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
         <p class="veles-form-status" aria-live="polite"></p>
@@ -368,9 +372,48 @@
     });
   }
 
+  function adaptContactPlaceholders() {
+    const contactText = qs('#rec737865457 .t555__contentwrapper .t-text');
+    if (contactText) {
+      contactText.innerHTML =
+        '<div style="font-size:20px" data-customstyle="yes">Адрес: ХХХХХХХ<br><a href="#" aria-label="Телефон будет указан позже">+7 (ХХХ) ХХХ-ХХ-ХХ</a></div>';
+    }
+
+    qsa('a[href^="tel:"]').forEach((link) => {
+      link.href = '#';
+      if (/\+?7|\d{3}/.test(link.textContent)) link.textContent = '+7 (ХХХ) ХХХ-ХХ-ХХ';
+      link.setAttribute('aria-label', 'Телефон будет указан позже');
+    });
+
+    const socialRoots = {
+      instagram: 'https://instagram.com',
+      telegram: 'https://t.me',
+      whatsapp: 'https://wa.me',
+      vk: 'https://vk.ru'
+    };
+
+    qsa('a').forEach((link) => {
+      const href = (link.getAttribute('href') || '').toLowerCase();
+      const label = (link.getAttribute('aria-label') || link.textContent || '').toLowerCase();
+      const network = Object.keys(socialRoots).find((name) => href.includes(name) || label.includes(name));
+      if (network) {
+        link.href = socialRoots[network];
+        link.target = '_blank';
+        link.rel = 'nofollow noopener';
+      }
+    });
+  }
+
+  function removeVideoReviews() {
+    ['rec745221192', 'rec745217206', 'rec745219112'].forEach((id) => {
+      const record = document.getElementById(id);
+      if (record) record.remove();
+    });
+  }
+
   function adaptImages() {
     const hero = qs('#rec843022128 .t396__carrier');
-    setBackground(hero, 'assets/house-09.jpg');
+    setBackground(hero, 'assets/hero-light-forest.png');
 
     qsa('#rec739097020 .t-bgimg').slice(0, 3).forEach((element, index) => {
       setBackground(element, [PROJECT_IMAGES[0], PROJECT_IMAGES[2], PROJECT_IMAGES[8]][index]);
@@ -418,6 +461,8 @@
     adaptTexts();
     installAboutFacts();
     adaptLinks();
+    adaptContactPlaceholders();
+    removeVideoReviews();
     adaptImages();
     simplifyLocations();
     installMortgageDetails();

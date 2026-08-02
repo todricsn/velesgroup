@@ -173,7 +173,7 @@ body.t-body,
 
 /* Hero keeps the exact Zero Block layout and motion from the export. */
 #rec843022128 .t396__carrier {
-  background-image: url('assets/house-09.jpg') !important;
+  background-image: url('assets/hero-light-forest.png') !important;
   background-position: center center !important;
 }
 
@@ -264,11 +264,19 @@ body.t-body,
 }
 
 #rec843022128 .tn-elem[data-elem-id='1734687168225'] {
-  height: 138px !important;
+  height: 220px !important;
 }
 
 #rec843022128 .tn-elem[data-elem-id='1734687168225'] .tn-atom {
   overflow: visible !important;
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734687515140'] {
+  height: 470px !important;
+}
+
+#rec843022128 .tn-elem[data-elem-id='1734688710331'] {
+  top: 650px !important;
 }
 
 .veles-consultation-form {
@@ -297,7 +305,8 @@ body.t-body,
   pointer-events: none;
 }
 
-.veles-consultation-form input {
+.veles-consultation-form input,
+.veles-consultation-form textarea {
   box-sizing: border-box;
   width: 100%;
   height: 56px;
@@ -311,7 +320,17 @@ body.t-body,
   transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.veles-consultation-form input:focus {
+.veles-consultation-form textarea {
+  height: 58px;
+  resize: none;
+}
+
+.veles-form-field--comment {
+  grid-column: 1 / -1;
+}
+
+.veles-consultation-form input:focus,
+.veles-consultation-form textarea:focus {
   border-color: var(--veles-leaf);
   background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 0 0 3px rgba(79, 118, 90, 0.12);
@@ -349,6 +368,10 @@ body.t-body,
 
 .veles-consultation-form.is-invalid input:invalid {
   border-color: #9d5148;
+}
+
+#rec843022128 .t396__filter {
+  background: linear-gradient(90deg, rgba(8, 37, 23, 0.46), rgba(8, 37, 23, 0.08) 58%, rgba(8, 37, 23, 0.12)) !important;
 }
 
 /* Forest replaces only the original terracotta accent; block geometry is untouched. */
@@ -465,15 +488,19 @@ svg [stroke='#cf8f64'] {
 }
 
 .veles-about-facts article {
-  display: flex;
-  min-height: 104px;
-  padding: 18px 18px 16px;
-  flex-direction: column;
+  display: block;
+  min-height: 0;
+  padding: 0 22px 0 0;
   box-sizing: border-box;
-  border: 1px solid rgba(21, 61, 42, 0.12);
-  border-radius: 16px;
-  background: var(--veles-mist);
+  border: 0;
+  border-right: 1px solid rgba(21, 61, 42, 0.16);
+  border-radius: 0;
+  background: transparent;
   color: var(--veles-forest-deep);
+}
+
+.veles-about-facts article:last-child {
+  border-right: 0;
 }
 
 .veles-about-facts strong {
@@ -485,9 +512,46 @@ svg [stroke='#cf8f64'] {
 }
 
 .veles-about-facts span {
+  display: block;
   color: #3c5344;
-  font-size: 12px;
-  line-height: 1.4;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#rec739094538 em,
+#rec739094538 .t254__author,
+#rec739094538 .t254__icon {
+  color: var(--veles-leaf) !important;
+}
+
+#rec745221192,
+#rec745217206,
+#rec745219112 {
+  display: none !important;
+}
+
+/* Completed projects title: one line on desktop, two unclipped lines on mobile. */
+#rec745374248 .tn-elem[data-elem-id='1713871863514'] {
+  top: 34px !important;
+  left: calc(50% - 550px) !important;
+  width: 1100px !important;
+}
+
+#rec745374248 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
+  font-size: 52px !important;
+  line-height: 1.15 !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 1199px) and (min-width: 980px) {
+  #rec745374248 .tn-elem[data-elem-id='1713871863514'] {
+    left: 20px !important;
+    width: calc(100% - 40px) !important;
+  }
+
+  #rec745374248 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
+    font-size: 46px !important;
+  }
 }
 
 /* Brand green replaces the remaining legacy orange in the adapted records. */
@@ -685,7 +749,7 @@ svg [stroke='#cf8f64'] {
   }
 
   #rec843022128 .t396__filter {
-    background: linear-gradient(180deg, rgba(8, 37, 23, 0.6), rgba(8, 37, 23, 0.25)) !important;
+    background: linear-gradient(180deg, rgba(8, 37, 23, 0.42), rgba(8, 37, 23, 0.16)) !important;
   }
 
   #rec843022128 .tn-elem[data-elem-id='1734688090232'] .tn-atom {
@@ -698,7 +762,12 @@ svg [stroke='#cf8f64'] {
 
   .veles-about-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 22px;
     width: calc(100% - 48px);
+  }
+
+  .veles-about-facts article:nth-child(2n) {
+    border-right: 0;
   }
 
   .veles-mortgage-note {
@@ -716,6 +785,24 @@ svg [stroke='#cf8f64'] {
 
   .r[id] {
     scroll-margin-top: 76px;
+  }
+
+  #rec745380983 .t396__artboard,
+  #rec745380983 .t396__filter,
+  #rec745380983 .t396__carrier {
+    height: 130px !important;
+  }
+
+  #rec745380983 .tn-elem[data-elem-id='1713871863514'] {
+    top: 24px !important;
+    left: 15px !important;
+    width: calc(100% - 30px) !important;
+  }
+
+  #rec745380983 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
+    font-size: clamp(30px, 9vw, 40px) !important;
+    line-height: 1.05 !important;
+    white-space: normal;
   }
 
   .veles-mobile-brand {
@@ -740,6 +827,18 @@ svg [stroke='#cf8f64'] {
     grid-template-columns: 1fr;
   }
 
+  #rec843022128 .tn-elem[data-elem-id='1734687168225'] {
+    height: 300px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734688710331'] {
+    top: 760px !important;
+  }
+
+  .veles-form-field--comment {
+    grid-column: 1;
+  }
+
   .veles-consultation-form button,
   .veles-form-status {
     grid-column: 1;
@@ -752,8 +851,9 @@ svg [stroke='#cf8f64'] {
   }
 
   .veles-about-facts article {
-    min-height: 96px;
-    padding: 13px;
+    min-height: 0;
+    padding: 0 12px 0 0;
+    border-right: 1px solid rgba(21, 61, 42, 0.16);
   }
 
   .veles-about-facts strong {
@@ -761,7 +861,7 @@ svg [stroke='#cf8f64'] {
   }
 
   .veles-about-facts span {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .veles-mortgage-note {
@@ -909,11 +1009,11 @@ svg [stroke='#cf8f64'] {
   }
 
   #rec843022128 .tn-elem[data-elem-id='1734687515140'] {
-    height: 390px !important;
+    height: 530px !important;
   }
 
   #rec843022128 .tn-elem[data-elem-id='1734688710331'] {
-    top: 670px !important;
+    top: 760px !important;
   }
 
   #rec843022128 .tn-elem[data-elem-id='1657823210914'] {
