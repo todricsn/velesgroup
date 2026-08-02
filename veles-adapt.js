@@ -140,7 +140,7 @@
         wrapper.className = 'veles-preloader-logo';
         preloader.appendChild(wrapper);
 
-        fetch('assets/veles-preloader-logo.svg')
+        fetch('assets/veles-preloader-logo.svg?v=20260802-2', { cache: 'reload' })
           .then((response) => {
             if (!response.ok) throw new Error('Не удалось загрузить логотип прелоадера');
             return response.text();

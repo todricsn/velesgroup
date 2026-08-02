@@ -24,13 +24,6 @@
       to { fill: var(--ink); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .veles-loader-piece {
-        fill: var(--ink);
-        stroke-dashoffset: 0;
-        animation: none;
-      }
-    }
   </style>
   <defs>
     <clipPath id="roof-left"><rect x="0" y="0" width="226" height="438" /></clipPath>
