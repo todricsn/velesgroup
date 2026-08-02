@@ -75,16 +75,16 @@
   }
 
   function installBranding() {
-    document.title = 'Велес Групп — малоэтажные дома под ключ';
+    document.title = 'Велес Групп — модульные дома под ключ';
 
     const description = qs('meta[name="description"]');
     if (description) {
       description.content =
-        'Велес Групп строит малоэтажные дома под ключ: от геологии участка и проектирования до отделки и благоустройства.';
+        'Велес Групп строит модульные дома под ключ: от геологии участка и проектирования до отделки и благоустройства.';
     }
 
     qsa('meta[property="og:title"]').forEach((meta) => {
-      meta.content = 'Велес Групп — малоэтажные дома под ключ';
+      meta.content = 'Велес Групп — модульные дома под ключ';
     });
     qsa('meta[property="og:description"]').forEach((meta) => {
       meta.content = description ? description.content : '';
@@ -143,7 +143,7 @@
     setAtomHTML(
       'rec843022128',
       '1734688090232',
-      'Малоэтажные дома<br><span class="veles-hero-accent">под ключ</span>'
+      'Модульные дома<br><span class="veles-hero-accent">под ключ</span>'
     );
     setAtomHTML(
       'rec843022128',
@@ -359,7 +359,7 @@
     );
     if (fullCycle) {
       fullCycle.textContent =
-        'Мы строим малоэтажные дома под ключ и отвечаем за весь результат — от первого выезда на участок до готового дома и благоустроенной территории.';
+        'Мы строим модульные дома под ключ и отвечаем за весь результат — от первого выезда на участок до готового дома и благоустроенной территории.';
     }
 
     replaceVisibleText(/ГЕОГРАФИЯ\s*HOUSE/gi, 'ВЕЛЕС ГРУПП');
@@ -372,7 +372,7 @@
     const footerText = qs('#rec737865458 .t464__text');
     if (footerText) {
       footerText.innerHTML =
-        '<div style="font-size:16px">ВЕЛЕС ГРУПП<br><br>Малоэтажные дома под ключ<br>Красноярск</div>';
+        '<div style="font-size:16px">ВЕЛЕС ГРУПП<br><br>Модульные дома под ключ<br>Красноярск</div>';
     }
   }
 
