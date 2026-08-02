@@ -389,8 +389,9 @@
       if (item) item.dataset.projectUrl = `project.html?project=${(index % PROJECT_IMAGES.length) + 1}`;
     });
 
-    const processImage = qs('#rec745199205 .t500__img');
-    setImage(processImage, 'assets/order-phone.png', 'Заказ дома по шагам');
+    qsa('#rec745199205 .t500__img, #rec737865446 .t500__img').forEach((processImage) => {
+      setImage(processImage, 'assets/order-phone.png', 'Заказ дома по шагам');
+    });
 
     const mortgageImage = qsa('#rec745200818 img').find((image) => image.getBoundingClientRect().width > 300);
     setImage(mortgageImage, 'assets/mortgage-banks.png', 'Банки-партнёры по ипотеке');
