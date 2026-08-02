@@ -124,6 +124,40 @@ body.t-body,
   background-color: var(--veles-white) !important;
 }
 
+/* The open mobile drawer uses the site's light forest theme. */
+#rec737865418 .t450 {
+  background-color: var(--veles-white) !important;
+  border-left: 1px solid rgba(21, 61, 42, 0.12);
+  box-shadow: -24px 0 70px rgba(7, 35, 21, 0.2);
+}
+
+#rec737865418 .t450__close-button {
+  background-color: var(--veles-white) !important;
+}
+
+#rec737865418 .t450__close_icon {
+  color: var(--veles-forest-deep) !important;
+}
+
+#rec737865418 .t450__close_icon span {
+  background-color: var(--veles-forest-deep) !important;
+}
+
+#rec737865418 .t450__logoimg {
+  filter: none !important;
+}
+
+#rec737865418 .t450 .t-menu__link-item,
+#rec737865418 .t450 .t450__right_descr,
+#rec737865418 .t450 .t450__right_descr a {
+  color: var(--veles-forest-deep) !important;
+}
+
+#rec737865418 .t450__overlay_bg {
+  background-color: var(--veles-forest-deep) !important;
+  opacity: 0.28 !important;
+}
+
 /* Keep the original animated preloader record and replace only its artwork. */
 #rec737865419 .t396__elem,
 #rec737865419 .t396__carrier,
