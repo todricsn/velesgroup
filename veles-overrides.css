@@ -994,7 +994,141 @@ svg [stroke='#cf8f64'] {
   }
 }
 
-@media (max-width: 639px) {
+/*
+ * Tilda exported separate records for desktop and mobile. Keep the desktop
+ * records as the single content source and only adapt their layout below.
+ * This prevents copy and section order from drifting between breakpoints.
+ */
+@media (max-width: 980px) {
+  html,
+  body,
+  #allrecords {
+    overflow-x: clip;
+  }
+
+  body #allrecords #rec745111069,
+  body #allrecords #rec745370649,
+  body #allrecords #rec737865446,
+  body #allrecords #rec745380983 {
+    display: none !important;
+  }
+
+  body #allrecords #rec744061520,
+  body #allrecords #rec737865445,
+  body #allrecords #rec745199205,
+  body #allrecords #rec745374248 {
+    display: block !important;
+  }
+
+  #rec744061520 .t182__title,
+  #rec744061520 .t182__title * {
+    font-size: clamp(34px, 5.5vw, 46px) !important;
+    line-height: 1.08 !important;
+  }
+
+  #rec745374248 .t396__artboard,
+  #rec745374248 .t396__filter,
+  #rec745374248 .t396__carrier {
+    height: 150px !important;
+    min-height: 150px !important;
+  }
+
+  #rec745374248 .tn-elem[data-elem-id='1713871863514'] {
+    top: 28px !important;
+    left: 20px !important;
+    width: calc(100% - 40px) !important;
+    height: auto !important;
+    min-height: 52px;
+  }
+
+  #rec745374248 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
+    font-size: clamp(36px, 5vw, 46px) !important;
+    line-height: 1.1 !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  #rec747380957 .tn-elem[data-elem-id='1715448372170'] {
+    display: none !important;
+  }
+
+  #rec795784078 .tn-elem[data-elem-id='1725696497374'] {
+    left: 15px !important;
+    width: calc(100% - 30px) !important;
+  }
+
+  #rec745200818 .veles-mortgage-note {
+    left: 7%;
+    width: 86%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 980px) {
+  #rec843022128 .tn-elem[data-elem-id='1734699727749'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727764'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727772'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727744'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727761'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727770'] {
+    top: calc(100% - 170px) !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727749'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727764'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727772'] {
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727744'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727761'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727770'] {
+    display: flex !important;
+    align-items: center;
+    min-height: 56px;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727749'] {
+    left: 4% !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727744'] {
+    left: calc(4% + 66px) !important;
+    width: calc(28% - 66px) !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727764'] {
+    left: 36% !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727761'] {
+    left: calc(36% + 66px) !important;
+    width: calc(28% - 66px) !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727772'] {
+    left: 68% !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727770'] {
+    left: calc(68% + 66px) !important;
+    width: calc(28% - 66px) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body #allrecords #rec745109889,
+  body #allrecords #rec744479685 {
+    display: none !important;
+  }
+
+  body #allrecords #rec739498252,
+  body #allrecords #rec739497362 {
+    display: block !important;
+  }
+}
+
+@media (max-width: 640px) {
   html,
   body,
   #allrecords {
@@ -1005,22 +1139,85 @@ svg [stroke='#cf8f64'] {
     scroll-margin-top: 76px;
   }
 
-  #rec745380983 .t396__artboard,
-  #rec745380983 .t396__filter,
-  #rec745380983 .t396__carrier {
+  #rec843022128 .t396__artboard,
+  #rec843022128 .t396__carrier,
+  #rec843022128 .t396__filter {
+    height: 1040px !important;
+    min-height: 1040px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1657823210914'] {
+    display: none !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734688090232'] {
+    height: auto !important;
+    min-height: 72px;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727749'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727764'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727772'] {
+    left: 24px !important;
+    width: 56px !important;
+    height: 56px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727744'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727761'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727770'] {
+    left: 94px !important;
+    display: flex !important;
+    align-items: center;
+    width: calc(100% - 118px) !important;
+    min-height: 56px;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727749'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727744'] {
+    top: 770px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727764'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727761'] {
+    top: 840px !important;
+  }
+
+  #rec843022128 .tn-elem[data-elem-id='1734699727772'],
+  #rec843022128 .tn-elem[data-elem-id='1734699727770'] {
+    top: 910px !important;
+  }
+
+  #rec745374248 .t396__artboard,
+  #rec745374248 .t396__filter,
+  #rec745374248 .t396__carrier {
     height: 130px !important;
   }
 
-  #rec745380983 .tn-elem[data-elem-id='1713871863514'] {
+  #rec739498252 .t396__artboard,
+  #rec739498252 .t396__filter,
+  #rec739498252 .t396__carrier {
+    height: 120px !important;
+    min-height: 120px !important;
+  }
+
+  #rec745374248 .tn-elem[data-elem-id='1713871863514'] {
     top: 24px !important;
     left: 15px !important;
     width: calc(100% - 30px) !important;
   }
 
-  #rec745380983 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
+  #rec745374248 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
     font-size: clamp(30px, 9vw, 40px) !important;
     line-height: 1.05 !important;
-    white-space: normal;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  #rec744061520 .t182__title,
+  #rec744061520 .t182__title * {
+    font-size: clamp(28px, 8vw, 34px) !important;
+    line-height: 1.12 !important;
   }
 
   .veles-mobile-brand {
@@ -1101,20 +1298,20 @@ svg [stroke='#cf8f64'] {
 
   #rec739095269 .tn-elem[data-elem-id='1713871863514'],
   #rec739096105 .tn-elem[data-elem-id='1713871863514'],
-  #rec745109889 .tn-elem[data-elem-id='1713871863514'],
+  #rec739498252 .tn-elem[data-elem-id='1713871863514'],
   #rec745221192 .tn-elem[data-elem-id='1713871863514'],
   #rec745374895 .tn-elem[data-elem-id='1713871863514'],
-  #rec745380983 .tn-elem[data-elem-id='1713871863514'] {
+  #rec745374248 .tn-elem[data-elem-id='1713871863514'] {
     left: 15px !important;
     width: calc(100% - 30px) !important;
   }
 
   #rec739095269 .tn-elem[data-elem-id='1713871863514'] .tn-atom,
   #rec739096105 .tn-elem[data-elem-id='1713871863514'] .tn-atom,
-  #rec745109889 .tn-elem[data-elem-id='1713871863514'] .tn-atom,
+  #rec739498252 .tn-elem[data-elem-id='1713871863514'] .tn-atom,
   #rec745221192 .tn-elem[data-elem-id='1713871863514'] .tn-atom,
   #rec745374895 .tn-elem[data-elem-id='1713871863514'] .tn-atom,
-  #rec745380983 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
+  #rec745374248 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
     font-size: clamp(31px, 9vw, 40px) !important;
     line-height: 1 !important;
     white-space: normal !important;
@@ -1133,18 +1330,18 @@ svg [stroke='#cf8f64'] {
     top: 410px !important;
   }
 
-  #rec745370649 .t015__title {
+  #rec737865445 .t015__title {
     font-size: 38px !important;
     line-height: 1.08 !important;
     letter-spacing: -0.04em !important;
   }
 
-  #rec745370649 .t015__title * {
+  #rec737865445 .t015__title * {
     font-size: inherit !important;
     line-height: inherit !important;
   }
 
-  #rec745370649 .t015__descr {
+  #rec737865445 .t015__descr {
     max-width: 330px;
     margin-right: auto;
     margin-left: auto;
@@ -1152,14 +1349,14 @@ svg [stroke='#cf8f64'] {
     line-height: 1.4 !important;
   }
 
-  #rec737865446 .t500__img {
+  #rec745199205 .t500__img {
     width: 100% !important;
     height: 520px !important;
     object-fit: contain !important;
     object-position: center center !important;
   }
 
-  #rec737865446 .t500__imgwrapper {
+  #rec745199205 .t500__imgwrapper {
     overflow: hidden;
     margin-right: 15px;
     margin-left: 15px;
@@ -1199,12 +1396,25 @@ svg [stroke='#cf8f64'] {
     display: none !important;
   }
 
+  #rec747380957 .tn-elem[data-elem-id='1715448372170'] {
+    display: none !important;
+  }
+
+  #rec739080578 .tn-elem[data-elem-id='1713870711777'],
+  #rec739080578 .tn-elem[data-elem-id='1713870720378'],
+  #rec739080578 .tn-elem[data-elem-id='1713870732480'],
+  #rec795784078 .tn-elem[data-elem-id='1725696497374'],
+  #rec747380957 .tn-elem[data-elem-id='1570615698717'] {
+    left: 15px !important;
+    width: calc(100% - 30px) !important;
+  }
+
   #rec747380957 .t396__artboard {
     height: 640px !important;
   }
 
   #rec745200818 .t396__artboard {
-    height: 1020px !important;
+    height: 1140px !important;
   }
 
   #rec745200818 .tn-elem[data-elem-id='1715076908376'] {
@@ -1222,10 +1432,61 @@ svg [stroke='#cf8f64'] {
   }
 }
 
+@media (min-width: 480px) and (max-width: 640px) {
+  #rec739080578 .t396__artboard {
+    height: 900px !important;
+  }
+
+  #rec739080578 .tn-elem[data-elem-id='1713870720378'] {
+    top: 230px !important;
+  }
+
+  #rec739080578 .tn-elem[data-elem-id='1713870732480'] {
+    top: 455px !important;
+  }
+
+  #rec739080578 .veles-about-facts {
+    top: 700px;
+  }
+}
+
 @media (max-width: 479px) {
+  #rec739497362 .t905__wrapper {
+    gap: 16px;
+  }
+
+  #rec739497362 .t905__card {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden;
+    border: 1px solid rgba(21, 61, 42, 0.1);
+    border-radius: 16px;
+    background: #fff;
+  }
+
+  #rec739497362 .t905__content {
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+    height: auto !important;
+    min-height: 210px;
+  }
+
+  #rec739497362 .t905__image_wrapper,
+  #rec739497362 .t905__image {
+    flex: 0 0 210px !important;
+    height: 210px !important;
+    min-height: 210px !important;
+  }
+
+  #rec739497362 .t905__image {
+    box-sizing: border-box;
+    padding-bottom: 0 !important;
+  }
+
   #rec843022128 .tn-elem[data-elem-id='1734688090232'] {
-    left: calc(50% - 160px + -25px) !important;
-    width: 370px !important;
+    left: 16px !important;
+    width: calc(100% - 32px) !important;
   }
 
   #rec843022128 .tn-elem[data-elem-id='1734688090232'] .tn-atom {
