@@ -8,6 +8,31 @@
   const qs = (selector, root = document) => root.querySelector(selector);
   const qsa = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
+  function installPreloader() {
+    if (qs('#rec737865419 .veles-preloader-logo')) return;
+
+    const artboard = qs('#rec737865419 .t396__artboard');
+    if (!artboard) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'veles-preloader-logo';
+    artboard.appendChild(wrapper);
+
+    fetch('assets/veles-preloader-logo.svg?v=20260802-3', { cache: 'reload' })
+      .then((response) => {
+        if (!response.ok) throw new Error('Не удалось загрузить логотип прелоадера');
+        return response.text();
+      })
+      .then((svg) => {
+        if (wrapper.isConnected) wrapper.innerHTML = svg;
+      })
+      .catch(() => {
+        if (wrapper.isConnected) {
+          wrapper.innerHTML = '<img src="assets/veles-logo.png" alt="Велес Групп">';
+        }
+      });
+  }
+
   function homeTarget() {
     const pageName = window.location.pathname.split('/').pop();
     return !pageName || pageName === 'index.html' ? '#rec843022128' : 'index.html';
@@ -133,26 +158,7 @@
       homeLink.appendChild(image);
     });
 
-    if (!qs('#rec737865419 .veles-preloader-logo')) {
-      const preloader = qs('#rec737865419 .t396__artboard');
-      if (preloader) {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'veles-preloader-logo';
-        preloader.appendChild(wrapper);
-
-        fetch('assets/veles-preloader-logo.svg?v=20260802-2', { cache: 'reload' })
-          .then((response) => {
-            if (!response.ok) throw new Error('Не удалось загрузить логотип прелоадера');
-            return response.text();
-          })
-          .then((svg) => {
-            if (wrapper.isConnected) wrapper.innerHTML = svg;
-          })
-          .catch(() => {
-            wrapper.innerHTML = '<img src="assets/veles-logo.png" alt="Велес Групп">';
-          });
-      }
-    }
+    installPreloader();
 
     if (!qs('.veles-mobile-brand')) {
       const mobileHeader = qs('#rec737865418');
@@ -736,6 +742,8 @@
     refineLegacyBlocks();
     installInfiniteProjectsCarousel();
   }
+
+  installPreloader();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', runAdaptation, { once: true });

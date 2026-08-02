@@ -159,6 +159,43 @@ body.t-body,
 }
 
 /* Full-screen SVG preloader: the same draw-then-fill cadence as the reference. */
+html.veles-preloader-active,
+html.veles-preloader-active body {
+  overflow: hidden !important;
+}
+
+html.veles-preloader-active #rec737865419 {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 100005 !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 100dvh !important;
+  height: 100dvh !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+html.veles-preloader-active #rec737865419 .t396,
+html.veles-preloader-active #rec737865419 .t396__artboard,
+html.veles-preloader-active #rec737865419 .t396__carrier,
+html.veles-preloader-active #rec737865419 .t396__filter {
+  min-height: 100dvh !important;
+  height: 100dvh !important;
+}
+
+html.veles-preloader-active:not(.veles-preloader-exiting) #rec737865419 .t396 {
+  opacity: 1 !important;
+}
+
+html.veles-preloader-active.veles-preloader-exiting #rec737865419 .t396 {
+  animation: veles-preloader-exit 0.62s ease both;
+}
+
+@keyframes veles-preloader-exit {
+  to { opacity: 0; }
+}
+
 #rec737865419 .t396__elem {
   visibility: hidden !important;
 }
