@@ -656,8 +656,34 @@ svg [stroke='#cf8f64'] {
   text-align: center !important;
 }
 
+#rec744068079 .t-btnflex {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#rec744068079 .t-btnflex__text {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+#rec744068079 .t-btnflex__icon {
+  display: none !important;
+}
+
+#rec737865448 .t-col.t-col_11.t-prefix_1 {
+  float: none !important;
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 1200px;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 #rec737865448 .t015__title {
   box-sizing: border-box;
+  width: 100% !important;
   max-width: 1160px !important;
   margin-right: auto !important;
   margin-left: auto !important;
