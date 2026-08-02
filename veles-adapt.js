@@ -104,6 +104,7 @@
       '#rec737865899 .t446__imglogo',
       '#rec737865418 .t450__logo img',
       '#rec737865418 .t450__logo__img',
+      '#rec737865418 .t450__logoimg',
       '#rec737865458 .t464__logo'
     ].join(',');
 
