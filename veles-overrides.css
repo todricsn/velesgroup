@@ -115,9 +115,12 @@ body.t-body,
   display: none !important;
 }
 
-#rec737865418 .t450__close_icon,
-#rec737865418 .t450__close_icon span {
+#rec737865418 .t450__close_icon {
   color: var(--veles-white) !important;
+  background: transparent !important;
+}
+
+#rec737865418 .t450__close_icon span {
   background-color: var(--veles-white) !important;
 }
 
