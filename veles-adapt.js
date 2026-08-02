@@ -138,8 +138,19 @@
       if (preloader) {
         const wrapper = document.createElement('div');
         wrapper.className = 'veles-preloader-logo';
-        wrapper.innerHTML = '<img src="assets/veles-logo.png" alt="Велес Групп">';
         preloader.appendChild(wrapper);
+
+        fetch('assets/veles-preloader-logo.svg')
+          .then((response) => {
+            if (!response.ok) throw new Error('Не удалось загрузить логотип прелоадера');
+            return response.text();
+          })
+          .then((svg) => {
+            if (wrapper.isConnected) wrapper.innerHTML = svg;
+          })
+          .catch(() => {
+            wrapper.innerHTML = '<img src="assets/veles-logo.png" alt="Велес Групп">';
+          });
       }
     }
 

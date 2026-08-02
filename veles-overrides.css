@@ -158,17 +158,25 @@ body.t-body,
   opacity: 0.28 !important;
 }
 
-/* Keep the original animated preloader record and replace only its artwork. */
-#rec737865419 .t396__elem,
-#rec737865419 .t396__carrier,
-#rec737865419 .t396__filter {
+/* Full-screen SVG preloader: the same draw-then-fill cadence as the reference. */
+#rec737865419 .t396__elem {
   visibility: hidden !important;
 }
 
 #rec737865419 .t396__artboard {
-  background:
-    radial-gradient(circle at 50% 48%, rgba(185, 201, 185, 0.36), transparent 34%),
-    var(--veles-paper) !important;
+  background-color: var(--veles-forest-deep) !important;
+}
+
+#rec737865419 .t396__carrier {
+  visibility: visible !important;
+  background-image: url('assets/hero-light-forest.png') !important;
+  background-position: center center !important;
+  filter: saturate(0.72) contrast(1.04);
+}
+
+#rec737865419 .t396__filter {
+  visibility: visible !important;
+  background: rgba(4, 22, 13, 0.84) !important;
 }
 
 .veles-preloader-logo {
@@ -176,33 +184,22 @@ body.t-body,
   z-index: 100;
   top: 50%;
   left: 50%;
-  width: min(560px, 78vw);
+  width: min(740px, 82vw);
   transform: translate(-50%, -50%);
   visibility: visible !important;
-  animation: veles-logo-reveal 2.5s cubic-bezier(0.2, 0.75, 0.22, 1) both;
 }
 
 .veles-preloader-logo img {
   display: block;
   width: 100%;
   height: auto;
+  filter: brightness(0) invert(1);
 }
 
-@keyframes veles-logo-reveal {
-  0% {
-    opacity: 0;
-    clip-path: inset(0 100% 0 0);
-    transform: translate(-50%, -47%) scale(0.97);
-  }
-  48% {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-  }
-  100% {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-    transform: translate(-50%, -50%) scale(1);
-  }
+.veles-preloader-logo svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* Hero keeps the exact Zero Block layout and motion from the export. */
@@ -1235,7 +1232,7 @@ svg [stroke='#cf8f64'] {
   }
 
   .veles-preloader-logo {
-    width: 86vw;
+    width: min(86vw, 480px);
   }
 
   .veles-consultation-form {
@@ -1520,11 +1517,6 @@ svg [stroke='#cf8f64'] {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .veles-preloader-logo {
-    animation: none;
-  }
-}
 
 @media (max-width: 959px) {
   #rec744479685 .tn-elem[data-elem-id='1594968113405'] {

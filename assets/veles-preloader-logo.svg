@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1691 438" role="img" aria-labelledby="title desc">
+  <title id="title">Велес Групп</title>
+  <desc id="desc">Анимированный логотип Велес Групп</desc>
+  <style>
+    .veles-loader-piece {
+      fill: transparent;
+      stroke: var(--ink);
+      stroke-width: 2.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      paint-order: stroke fill;
+      animation:
+        veles-loader-draw 1s ease-in var(--stroke-delay) both,
+        veles-loader-fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) var(--fill-delay) both;
+    }
+
+    @keyframes veles-loader-draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes veles-loader-fill {
+      to { fill: var(--ink); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .veles-loader-piece {
+        fill: var(--ink);
+        stroke-dashoffset: 0;
+        animation: none;
+      }
+    }
+  </style>
+  <defs>
+    <clipPath id="roof-left"><rect x="0" y="0" width="226" height="438" /></clipPath>
+    <clipPath id="roof-right"><rect x="226" y="0" width="230" height="438" /></clipPath>
+    <clipPath id="tree-left-top"><rect x="0" y="0" width="230" height="240" /></clipPath>
+    <clipPath id="tree-left-bottom"><rect x="0" y="240" width="230" height="198" /></clipPath>
+    <clipPath id="tree-right-top"><rect x="220" y="0" width="200" height="250" /></clipPath>
+    <clipPath id="tree-right-bottom"><rect x="220" y="250" width="200" height="188" /></clipPath>
+    <clipPath id="letter-v-left"><rect x="500" y="170" width="50" height="220" /></clipPath>
+    <clipPath id="letter-v-right"><rect x="550" y="170" width="50" height="220" /></clipPath>
+  </defs>
+
+  <path class="veles-loader-piece" style="--ink:#c9d8c8;--stroke-delay:0s;--fill-delay:.8s" pathLength="1" clip-path="url(#roof-left)" d="M 0 151 L 63 151 L 224 42 L 390 150 L 455 150 L 224 0 Z" />
+  <path class="veles-loader-piece" style="--ink:#c9d8c8;--stroke-delay:.12s;--fill-delay:.9s" pathLength="1" clip-path="url(#roof-right)" d="M 0 151 L 63 151 L 224 42 L 390 150 L 455 150 L 224 0 Z" />
+  <path class="veles-loader-piece" style="--ink:#c9d8c8;--stroke-delay:.24s;--fill-delay:1s" pathLength="1" clip-path="url(#tree-left-top)" d="M 194 94 L 94 166 L 94 205 L 156 161 L 157 197 L 71 262 L 70 300 L 155 239 L 157 278 L 56 354 L 57 392 L 156 320 L 158 425 L 194 425 L 194 321 L 220 336 L 220 299 L 194 278 L 195 238 L 220 254 L 220 217 L 194 197 Z" />
+  <path class="veles-loader-piece" style="--ink:#c9d8c8;--stroke-delay:.36s;--fill-delay:1.1s" pathLength="1" clip-path="url(#tree-left-bottom)" d="M 194 94 L 94 166 L 94 205 L 156 161 L 157 197 L 71 262 L 70 300 L 155 239 L 157 278 L 56 354 L 57 392 L 156 320 L 158 425 L 194 425 L 194 321 L 220 336 L 220 299 L 194 278 L 195 238 L 220 254 L 220 217 L 194 197 Z" />
+  <path class="veles-loader-piece" style="--ink:#c9d8c8;--stroke-delay:.48s;--fill-delay:1.2s" pathLength="1" clip-path="url(#tree-right-top)" fill-rule="evenodd" d="M 232 92 L 230 437 L 395 325 L 304 259 L 389 197 Z M 269 278 L 333 324 L 269 369 Z M 269 158 L 327 198 L 269 239 Z" />
+  <path class="veles-loader-piece" style="--ink:#c9d8c8;--stroke-delay:.6s;--fill-delay:1.3s" pathLength="1" clip-path="url(#tree-right-bottom)" fill-rule="evenodd" d="M 232 92 L 230 437 L 395 325 L 304 259 L 389 197 Z M 269 278 L 333 324 L 269 369 Z M 269 158 L 327 198 L 269 239 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:.72s;--fill-delay:1.4s" pathLength="1" clip-path="url(#letter-v-left)" fill-rule="evenodd" d="M 504 180 L 504 379 L 596 318 L 546 279 L 596 241 Z M 527 291 L 560 316 L 528 339 Z M 527 220 L 560 242 L 527 267 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:.84s;--fill-delay:1.5s" pathLength="1" clip-path="url(#letter-v-right)" fill-rule="evenodd" d="M 504 180 L 504 379 L 596 318 L 546 279 L 596 241 Z M 527 291 L 560 316 L 528 339 Z M 527 220 L 560 242 L 527 267 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:.96s;--fill-delay:1.6s" pathLength="1" d="M 620 196 L 620 362 L 703 363 L 710 343 L 641 342 L 641 281 L 702 280 L 696 260 L 641 259 L 641 218 L 699 217 L 700 196 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:1.08s;--fill-delay:1.7s" pathLength="1" d="M 785 195 L 729 362 L 752 362 L 786 261 L 820 362 L 842 363 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:1.2s;--fill-delay:1.8s" pathLength="1" d="M 866 196 L 866 362 L 949 363 L 955 343 L 887 342 L 887 281 L 948 280 L 941 260 L 887 259 L 887 218 L 944 217 L 945 196 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:1.32s;--fill-delay:1.9s" pathLength="1" d="M 1055 185 L 954 277 L 1056 367 L 1056 336 L 988 276 L 1056 216 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:1.44s;--fill-delay:2s" pathLength="1" d="M 1231 196 L 1147 197 L 1148 362 L 1169 362 L 1169 217 L 1231 216 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:1.56s;--fill-delay:2.1s" pathLength="1" fill-rule="evenodd" d="M 1256 185 L 1255 361 L 1276 362 L 1276 307 L 1348 250 Z M 1277 226 L 1312 251 L 1277 279 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:1.68s;--fill-delay:2.2s" pathLength="1" d="M 1367 189 L 1349 201 L 1396 298 L 1375 354 L 1394 364 L 1454 204 L 1434 196 L 1406 269 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:1.8s;--fill-delay:2.3s" pathLength="1" d="M 1479 196 L 1479 362 L 1500 361 L 1500 218 L 1537 216 L 1548 218 L 1548 362 L 1569 362 L 1569 196 Z" />
+  <path class="veles-loader-piece" style="--ink:#fff;--stroke-delay:1.92s;--fill-delay:2.4s" pathLength="1" d="M 1599 196 L 1599 362 L 1620 362 L 1620 218 L 1668 217 L 1668 361 L 1689 362 L 1689 196 Z" />
+</svg>
