@@ -306,10 +306,11 @@ body.t-body,
 }
 
 #rec843022128 .tn-elem[data-elem-id='1734687515140'] {
-  height: 470px !important;
+  height: 380px !important;
 }
 
 #rec843022128 .tn-elem[data-elem-id='1734688710331'] {
+  display: none !important;
   top: 584px !important;
   left: calc(50% - 600px + 720px) !important;
   width: 470px !important;
@@ -992,6 +993,10 @@ svg [stroke='#cf8f64'] {
     height: 300px !important;
   }
 
+  #rec843022128 .tn-elem[data-elem-id='1734687515140'] {
+    height: 430px !important;
+  }
+
   #rec843022128 .tn-elem[data-elem-id='1734688710331'] {
     top: 700px !important;
     left: calc(50% - 240px + 35px) !important;
@@ -1172,7 +1177,7 @@ svg [stroke='#cf8f64'] {
   }
 
   #rec843022128 .tn-elem[data-elem-id='1734687515140'] {
-    height: 530px !important;
+    height: 430px !important;
   }
 
   #rec843022128 .tn-elem[data-elem-id='1734688710331'] {
