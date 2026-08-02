@@ -75,16 +75,16 @@
   }
 
   function installBranding() {
-    document.title = 'Велес Групп — модульные дома под ключ';
+    document.title = 'Велес Групп — дома из СИП-панелей под ключ';
 
     const description = qs('meta[name="description"]');
     if (description) {
       description.content =
-        'Велес Групп строит модульные дома под ключ: от геологии участка и проектирования до отделки и благоустройства.';
+        'Велес Групп строит дома из СИП-панелей под ключ: от геологии участка и проектирования до отделки и благоустройства.';
     }
 
     qsa('meta[property="og:title"]').forEach((meta) => {
-      meta.content = 'Велес Групп — модульные дома под ключ';
+      meta.content = 'Велес Групп — дома из СИП-панелей под ключ';
     });
     qsa('meta[property="og:description"]').forEach((meta) => {
       meta.content = description ? description.content : '';
@@ -143,7 +143,7 @@
     setAtomHTML(
       'rec843022128',
       '1734688090232',
-      'Модульные дома<br><span class="veles-hero-accent">под ключ</span>'
+      'Дома из СИП-панелей<br><span class="veles-hero-accent">под ключ</span>'
     );
     setAtomHTML(
       'rec843022128',
@@ -309,6 +309,8 @@
       ['КАТАЛОГ МОДЕЛЕЙ', 'КАТАЛОГ ПРОЕКТОВ'],
       ['Модульные дома от 1 800 000₽', 'Одноэтажные дома'],
       ['Модульные бани от 1 210 000₽', 'Двухэтажные дома'],
+      ['Модульный дом', 'Дом из СИП-панелей'],
+      ['Модульная баня', 'Баня из СИП-панелей'],
       ['Решения для бизнеса от 2 000 000₽', 'Индивидуальные проекты'],
       ['ПЕРЕЙТИ В РАЗДЕЛ', 'СМОТРЕТЬ ПРОЕКТЫ'],
       ['Перейти в раздел', 'Смотреть проекты'],
@@ -334,6 +336,11 @@
 
     exactReplacements.forEach(([oldText, newText]) => replaceExactText(oldText, newText));
 
+    qsa('#rec753320289 input[type="radio"]').forEach((input) => {
+      if (input.value === 'Модульный дом') input.value = 'Дом из СИП-панелей';
+      if (input.value === 'Модульная баня') input.value = 'Баня из СИП-панелей';
+    });
+
     const builtProjectsTitle = qs('#rec737865448 .t015__title');
     if (builtProjectsTitle) builtProjectsTitle.textContent = 'Реализованные проекты Велес Групп';
 
@@ -353,6 +360,32 @@
     ];
     qsa('#rec739497362 .t905__descr').forEach((element, index) => {
       if (benefitDescriptions[index]) element.textContent = benefitDescriptions[index];
+    });
+
+    [
+      '1594968113405',
+      '1594971763337',
+      '1594972460392',
+      '1594972545936'
+    ].forEach((elementId, index) => {
+      if (benefitDescriptions[index]) {
+        setAtomHTML('rec744479685', elementId, benefitDescriptions[index]);
+      }
+    });
+
+    const turnkeyTitle = qs('#rec739795413 .t-section__title [data-customstyle="yes"]');
+    if (turnkeyTitle) turnkeyTitle.textContent = 'Строим дома из СИП-панелей под ключ';
+
+    const turnkeyDetails = [
+      'Прокладываем скрытую электрику и инженерные коммуникации.',
+      'Монтируем внутреннее и наружное освещение, розетки и выключатели.',
+      'Выполняем чистовую отделку внутри и снаружи.',
+      'Устанавливаем окна и стеклопакеты согласно проекту.',
+      'Оборудуем санузел и подключаем необходимую сантехнику.',
+      'Строим из СИП-панелей для круглогодичного проживания.'
+    ];
+    qsa('#rec739795413 .t-card__title').forEach((element, index) => {
+      if (turnkeyDetails[index]) element.textContent = turnkeyDetails[index];
     });
 
     const companyLead = qs('#rec739080578 .tn-elem .tn-atom');
@@ -384,7 +417,7 @@
     );
     if (fullCycle) {
       fullCycle.textContent =
-        'Мы строим модульные дома под ключ и отвечаем за весь результат — от первого выезда на участок до готового дома и благоустроенной территории.';
+        'Мы строим дома из СИП-панелей под ключ и отвечаем за весь результат — от первого выезда на участок до готового дома и благоустроенной территории.';
     }
 
     replaceVisibleText(/ГЕОГРАФИЯ\s*HOUSE/gi, 'ВЕЛЕС ГРУПП');
@@ -398,7 +431,7 @@
     const footerText = qs('#rec737865458 .t464__text');
     if (footerText) {
       footerText.innerHTML =
-        '<div style="font-size:16px">ВЕЛЕС ГРУПП<br><br>Модульные дома под ключ<br>Красноярск</div>';
+        '<div style="font-size:16px">ВЕЛЕС ГРУПП<br><br>Дома из СИП-панелей под ключ<br>Красноярск</div>';
     }
   }
 
