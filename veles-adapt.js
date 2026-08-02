@@ -8,6 +8,11 @@
   const qs = (selector, root = document) => root.querySelector(selector);
   const qsa = (selector, root = document) => Array.from(root.querySelectorAll(selector));
 
+  function homeTarget() {
+    const pageName = window.location.pathname.split('/').pop();
+    return !pageName || pageName === 'index.html' ? '#rec843022128' : 'index.html';
+  }
+
   function setAtomHTML(recordId, elementId, html) {
     const atom = qs(`#${recordId} .tn-elem[data-elem-id="${elementId}"] .tn-atom`);
     if (atom && atom.dataset.velesText !== html) {
@@ -75,16 +80,17 @@
   }
 
   function installBranding() {
-    document.title = 'Велес Групп — дома из СИП-панелей под ключ';
+    const homeHref = homeTarget();
+    document.title = 'Велес Групп — модульные дома под ключ';
 
     const description = qs('meta[name="description"]');
     if (description) {
       description.content =
-        'Велес Групп строит дома из СИП-панелей под ключ: от геологии участка и проектирования до отделки и благоустройства.';
+        'Велес Групп строит модульные дома под ключ: от геологии участка и проектирования до отделки и благоустройства.';
     }
 
     qsa('meta[property="og:title"]').forEach((meta) => {
-      meta.content = 'Велес Групп — дома из СИП-панелей под ключ';
+      meta.content = 'Велес Групп — модульные дома под ключ';
     });
     qsa('meta[property="og:description"]').forEach((meta) => {
       meta.content = description ? description.content : '';
@@ -108,7 +114,24 @@
       '#rec737865458 .t464__logo'
     ].join(',');
 
-    qsa(logoSelectors).forEach((image) => setImage(image, 'assets/veles-logo.png', 'Велес Групп'));
+    qsa(logoSelectors).forEach((image) => {
+      setImage(image, 'assets/veles-logo.png', 'Велес Групп');
+
+      const currentLink = image.closest('a');
+      if (currentLink) {
+        currentLink.href = homeHref;
+        currentLink.classList.add('veles-logo-home');
+        currentLink.setAttribute('aria-label', 'Велес Групп — на главную');
+        return;
+      }
+
+      const homeLink = document.createElement('a');
+      homeLink.className = 'veles-logo-home';
+      homeLink.href = homeHref;
+      homeLink.setAttribute('aria-label', 'Велес Групп — на главную');
+      image.parentNode.insertBefore(homeLink, image);
+      homeLink.appendChild(image);
+    });
 
     if (!qs('#rec737865419 .veles-preloader-logo')) {
       const preloader = qs('#rec737865419 .t396__artboard');
@@ -125,12 +148,15 @@
       if (mobileHeader) {
         const mobileBrand = document.createElement('a');
         mobileBrand.className = 'veles-mobile-brand';
-        mobileBrand.href = 'index.html';
+        mobileBrand.href = homeHref;
         mobileBrand.setAttribute('aria-label', 'Велес Групп — на главную');
         mobileBrand.innerHTML = '<img src="assets/veles-logo.png" alt="Велес Групп">';
         mobileHeader.appendChild(mobileBrand);
       }
     }
+
+    const mobileBrand = qs('.veles-mobile-brand');
+    if (mobileBrand) mobileBrand.href = homeHref;
 
     qsa('.t-sociallinks__wrapper').forEach((list) => {
       Array.from(list.childNodes).forEach((node) => {
@@ -143,7 +169,7 @@
     setAtomHTML(
       'rec843022128',
       '1734688090232',
-      'Дома из СИП-панелей<br><span class="veles-hero-accent">под ключ</span>'
+      'Модульные дома<br><span class="veles-hero-accent">под ключ</span>'
     );
     setAtomHTML(
       'rec843022128',
@@ -178,6 +204,10 @@
     });
 
     setBackground(qs('#rec843022128 .t396__carrier'), 'assets/hero-light-forest.png');
+  }
+
+  function removeHeroPoints() {
+    qsa('#rec843022128 .veles-hero-points').forEach((points) => points.remove());
   }
 
   function installHeroForm() {
@@ -253,32 +283,75 @@
     });
   }
 
-  function installAboutFacts() {
-    const artboard = qs('#rec739080578 .t396__artboard');
-    if (!artboard || qs('.veles-about-facts', artboard)) return;
+  function fitAboutSection() {
+    const record = qs('#rec739080578');
+    const artboard = qs('.t396__artboard', record);
+    const lastParagraph = qs('.tn-elem[data-elem-id="1713870732480"]', record);
+    if (!record || !artboard || !lastParagraph) return;
 
-    const facts = document.createElement('div');
-    facts.className = 'veles-about-facts';
-    facts.setAttribute('aria-label', 'Преимущества Велес Групп');
-    facts.innerHTML = `
-      <article><strong>Фиксированная цена</strong><span>Стоимость закрепляется в договоре и не меняется во время строительства.</span></article>
-      <article><strong>Срок 4–8 месяцев</strong><span>Собственная бригада работает по согласованному календарному графику.</span></article>
-      <article><strong>Гарантия до 10 лет</strong><span>Даём письменную гарантию на конструктивные элементы дома.</span></article>
-      <article><strong>Тёплый дом</strong><span>Применяем проверенные материалы и решения для сибирского климата.</span></article>`;
-    artboard.appendChild(facts);
+    window.requestAnimationFrame(() => {
+      const height = Math.ceil(lastParagraph.offsetTop + lastParagraph.offsetHeight + 24);
+      [artboard, qs('.t396__carrier', record), qs('.t396__filter', record)]
+        .filter(Boolean)
+        .forEach((element) => {
+          element.style.setProperty('height', `${height}px`, 'important');
+          element.style.setProperty('min-height', `${height}px`, 'important');
+        });
+    });
   }
 
-  function simplifyLocations() {
+  function removeAboutFacts() {
+    qsa('#rec739080578 .veles-about-facts').forEach((facts) => facts.remove());
+  }
+
+  function adaptNavigation() {
+    const homeHref = homeTarget();
     qsa('#rec737865899 .t-menusub, #rec737865418 .t-menusub').forEach((submenu) => {
       submenu.remove();
     });
 
-    qsa('#rec737865899 a, #rec737865418 a').forEach((link) => {
-      if (link.textContent.replace(/\s+/g, ' ').trim() === 'Красноярск') {
-        link.href = '#rec737865457';
-        link.removeAttribute('data-menu-submenu-hook');
-      }
-    });
+    const desktopHome = qs(
+      '#rec737865899 .t446__leftmenuwrapper .t446__list_item:first-child > .t-menu__link-item'
+    );
+    if (desktopHome) {
+      desktopHome.textContent = 'Главная';
+      desktopHome.href = homeHref;
+      desktopHome.removeAttribute('data-menu-submenu-hook');
+    }
+
+    const desktopCity = qsa('#rec737865899 .t446__rightmenuwrapper .t-menu__link-item')
+      .find((item) => item.textContent.replace(/\s+/g, ' ').trim() === 'Красноярск');
+    if (desktopCity) {
+      desktopCity.removeAttribute('href');
+      desktopCity.removeAttribute('data-menu-submenu-hook');
+      desktopCity.removeAttribute('target');
+      desktopCity.classList.add('veles-city-label');
+      desktopCity.setAttribute('aria-label', 'Красноярск');
+    }
+
+    const rightMenu = qs('#rec737865899 .t446__rightmenuwrapper');
+    if (rightMenu && !qs('.veles-header-phone', rightMenu)) {
+      const phone = document.createElement('span');
+      phone.className = 'veles-header-phone';
+      phone.textContent = '+7 (999) 000-00-00';
+      phone.setAttribute('aria-label', 'Телефон');
+      rightMenu.appendChild(phone);
+    }
+
+    const mobileList = qs('#rec737865418 .t450__menu > .t450__list');
+    const mobileFirstItem = mobileList && mobileList.firstElementChild;
+    const mobileHome = mobileFirstItem && qs('.t-menu__link-item, a', mobileFirstItem);
+    if (mobileHome) {
+      mobileHome.textContent = 'Главная';
+      mobileHome.href = homeHref;
+      mobileHome.removeAttribute('data-menu-submenu-hook');
+      Array.from(mobileHome.classList).forEach((className) => {
+        if (className.includes('submenu')) mobileHome.classList.remove(className);
+      });
+      Array.from(mobileFirstItem.classList).forEach((className) => {
+        if (className.includes('submenu')) mobileFirstItem.classList.remove(className);
+      });
+    }
   }
 
   function installMortgageDetails() {
@@ -294,8 +367,29 @@
     artboard.appendChild(note);
   }
 
+  function removeMortgageBanks() {
+    const banks = qs('#rec745200818 .tn-elem[data-elem-id="1715076908376"]');
+    if (banks) banks.remove();
+  }
+
+  function positionMortgageDetails() {
+    const button = qs('#rec745200818 .tn-elem[data-elem-id="1715077322122"]');
+    const note = qs('#rec745200818 .veles-mortgage-note');
+    if (!button || !note) return;
+
+    window.requestAnimationFrame(() => {
+      const top = button.offsetTop + button.offsetHeight + 24;
+      note.style.setProperty('top', `${Math.round(top)}px`, 'important');
+    });
+  }
+
   function adaptTexts() {
     setAtomHTML('rec739097020', '1713872106742', 'Одноэтажные дома');
+    setAtomHTML(
+      'rec745200818',
+      '1715076839210',
+      'Дом можно приобрести в кредит или ипотеку. Оставьте заявку — расскажем об условиях и поможем подготовить документы.'
+    );
 
     const brandCoverTitle = qs('#rec744061520 [field="title"]');
     if (brandCoverTitle) {
@@ -309,8 +403,8 @@
       ['КАТАЛОГ МОДЕЛЕЙ', 'КАТАЛОГ ПРОЕКТОВ'],
       ['Модульные дома от 1 800 000₽', 'Одноэтажные дома'],
       ['Модульные бани от 1 210 000₽', 'Двухэтажные дома'],
-      ['Модульный дом', 'Дом из СИП-панелей'],
-      ['Модульная баня', 'Баня из СИП-панелей'],
+      ['Дом из СИП-панелей', 'Модульный дом'],
+      ['Баня из СИП-панелей', 'Модульная баня'],
       ['Решения для бизнеса от 2 000 000₽', 'Индивидуальные проекты'],
       ['ПЕРЕЙТИ В РАЗДЕЛ', 'СМОТРЕТЬ ПРОЕКТЫ'],
       ['Перейти в раздел', 'Смотреть проекты'],
@@ -337,8 +431,8 @@
     exactReplacements.forEach(([oldText, newText]) => replaceExactText(oldText, newText));
 
     qsa('#rec753320289 input[type="radio"]').forEach((input) => {
-      if (input.value === 'Модульный дом') input.value = 'Дом из СИП-панелей';
-      if (input.value === 'Модульная баня') input.value = 'Баня из СИП-панелей';
+      if (input.value === 'Дом из СИП-панелей') input.value = 'Модульный дом';
+      if (input.value === 'Баня из СИП-панелей') input.value = 'Модульная баня';
     });
 
     const builtProjectsTitle = qs('#rec737865448 .t015__title');
@@ -374,7 +468,7 @@
     });
 
     const turnkeyTitle = qs('#rec739795413 .t-section__title [data-customstyle="yes"]');
-    if (turnkeyTitle) turnkeyTitle.textContent = 'Строим дома из СИП-панелей под ключ';
+    if (turnkeyTitle) turnkeyTitle.textContent = 'Строим модульные дома под ключ';
 
     const turnkeyDetails = [
       'Прокладываем скрытую электрику и инженерные коммуникации.',
@@ -382,7 +476,7 @@
       'Выполняем чистовую отделку внутри и снаружи.',
       'Устанавливаем окна и стеклопакеты согласно проекту.',
       'Оборудуем санузел и подключаем необходимую сантехнику.',
-      'Строим из СИП-панелей для круглогодичного проживания.'
+      'Собираем тёплый модульный дом для круглогодичного проживания.'
     ];
     qsa('#rec739795413 .t-card__title').forEach((element, index) => {
       if (turnkeyDetails[index]) element.textContent = turnkeyDetails[index];
@@ -417,7 +511,7 @@
     );
     if (fullCycle) {
       fullCycle.textContent =
-        'Мы строим дома из СИП-панелей под ключ и отвечаем за весь результат — от первого выезда на участок до готового дома и благоустроенной территории.';
+        'Мы строим модульные дома под ключ и отвечаем за весь результат — от первого выезда на участок до готового дома и благоустроенной территории.';
     }
 
     replaceVisibleText(/ГЕОГРАФИЯ\s*HOUSE/gi, 'ВЕЛЕС ГРУПП');
@@ -431,18 +525,19 @@
     const footerText = qs('#rec737865458 .t464__text');
     if (footerText) {
       footerText.innerHTML =
-        '<div style="font-size:16px">ВЕЛЕС ГРУПП<br><br>Дома из СИП-панелей под ключ<br>Красноярск</div>';
+        '<div style="font-size:16px">ВЕЛЕС ГРУПП<br><br>Модульные дома под ключ<br>Красноярск</div>';
     }
   }
 
   function adaptLinks() {
+    const homeHref = homeTarget();
     qsa('a').forEach((link) => {
       const label = link.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
       if (link.getAttribute('href') === '/') link.href = 'index.html';
       if (label === 'каталог' || label === 'смотреть каталог' || label === 'смотреть проекты') {
         link.href = 'catalog.html';
       }
-      if (label === 'проекты') link.href = 'catalog.html';
+      if (label === 'главная') link.href = homeHref;
     });
 
     qsa('#rec843022128 a[href="#rec739097020"]').forEach((link) => {
@@ -458,12 +553,12 @@
     const contactText = qs('#rec737865457 .t555__contentwrapper .t-text');
     if (contactText) {
       contactText.innerHTML =
-        '<div style="font-size:20px" data-customstyle="yes">Адрес: ХХХХХХХ<br><a href="#" aria-label="Телефон будет указан позже">+7 (ХХХ) ХХХ-ХХ-ХХ</a></div>';
+        '<div style="font-size:20px" data-customstyle="yes">Адрес: ХХХХХХХ<br><span aria-label="Телефон">+7 (999) 000-00-00</span></div>';
     }
 
     qsa('a[href^="tel:"]').forEach((link) => {
       link.href = '#';
-      if (/\+?7|\d{3}/.test(link.textContent)) link.textContent = '+7 (ХХХ) ХХХ-ХХ-ХХ';
+      if (/\+?7|\d{3}/.test(link.textContent)) link.textContent = '+7 (999) 000-00-00';
       link.setAttribute('aria-label', 'Телефон будет указан позже');
     });
 
@@ -518,9 +613,6 @@
     qsa('#rec745199205 .t500__img, #rec737865446 .t500__img').forEach((processImage) => {
       setImage(processImage, 'assets/order-phone.png', 'Заказ дома по шагам');
     });
-
-    const mortgageImage = qsa('#rec745200818 img').find((image) => image.getBoundingClientRect().width > 300);
-    setImage(mortgageImage, 'assets/mortgage-banks.png', 'Банки-партнёры по ипотеке');
 
     setBackground(qs('#rec795784078 .t396__carrier'), PROJECT_IMAGES[4]);
   }
@@ -615,16 +707,20 @@
   function runAdaptation() {
     installBranding();
     adaptHero();
+    removeHeroPoints();
     installHeroForm();
     positionHeroComposition();
     adaptTexts();
-    installAboutFacts();
+    removeAboutFacts();
+    fitAboutSection();
     adaptLinks();
     adaptContactPlaceholders();
     removeVideoReviews();
     adaptImages();
-    simplifyLocations();
+    adaptNavigation();
     installMortgageDetails();
+    removeMortgageBanks();
+    positionMortgageDetails();
     installProjectClicks();
     refineLegacyBlocks();
     installInfiniteProjectsCarousel();
@@ -641,5 +737,9 @@
     window.setTimeout(runAdaptation, 900);
   });
 
-  window.addEventListener('resize', positionHeroComposition);
+  window.addEventListener('resize', () => {
+    positionHeroComposition();
+    fitAboutSection();
+    positionMortgageDetails();
+  });
 })();

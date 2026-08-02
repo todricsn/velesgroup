@@ -1571,3 +1571,366 @@ svg [stroke='#cf8f64'] {
     top: 922px !important;
   }
 }
+
+/* Final content and responsive alignment pass. */
+.veles-logo-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#rec737865899 .t446__rightmenuwrapper {
+  display: inline-flex !important;
+  align-items: center;
+  height: 80px;
+  white-space: nowrap;
+}
+
+#rec737865899 .veles-city-label {
+  cursor: default !important;
+  pointer-events: none;
+}
+
+.veles-header-phone {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  margin-left: 18px;
+  color: #fff;
+  font: 550 13px/1 'Montserrat', Arial, sans-serif;
+  letter-spacing: -0.01em;
+  vertical-align: middle;
+  white-space: nowrap;
+  /* Keep the phone directly against the menu button. */
+  transform: translateX(66px);
+}
+
+/* The former hero shortcut items are intentionally removed. */
+#rec843022128 .tn-elem[data-elem-id='1734699727749'],
+#rec843022128 .tn-elem[data-elem-id='1734699727764'],
+#rec843022128 .tn-elem[data-elem-id='1734699727772'],
+#rec843022128 .tn-elem[data-elem-id='1734699727744'],
+#rec843022128 .tn-elem[data-elem-id='1734699727761'],
+#rec843022128 .tn-elem[data-elem-id='1734699727770'] {
+  display: none !important;
+}
+
+/* About ends directly after its last paragraph. */
+#rec739080578 .veles-about-facts {
+  display: none !important;
+}
+
+#rec739080578 {
+  padding-bottom: 0 !important;
+}
+
+#rec739080578 .t396__artboard,
+#rec739080578 .t396__carrier,
+#rec739080578 .t396__filter {
+  height: 380px !important;
+  min-height: 380px !important;
+}
+
+/* Keep the trust heading optically centered at every breakpoint. */
+#rec739498252 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#rec739498252 .t396__artboard,
+#rec739498252 .t396__carrier,
+#rec739498252 .t396__filter {
+  height: 170px !important;
+  min-height: 170px !important;
+}
+
+#rec739498252 .tn-elem[data-elem-id='1713871863514'] {
+  top: 50% !important;
+  left: 50% !important;
+  width: min(1100px, calc(100% - 30px)) !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+#rec739498252 .tn-elem[data-elem-id='1713871863514'] .tn-atom {
+  text-align: center !important;
+}
+
+/* Mortgage content is one centered, compact composition without bank artwork. */
+#rec745200818 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#rec745200818 .t396__artboard,
+#rec745200818 .t396__carrier,
+#rec745200818 .t396__filter {
+  height: 520px !important;
+  min-height: 520px !important;
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715076908376'],
+#rec745200818 .tn-elem[data-elem-id='1715077482361'] {
+  display: none !important;
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715076833089'],
+#rec745200818 .tn-elem[data-elem-id='1715076839210'],
+#rec745200818 .tn-elem[data-elem-id='1715077322122'] {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715076833089'] {
+  top: 58px !important;
+  width: min(1100px, calc(100% - 40px)) !important;
+  height: auto !important;
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715076833089'] .tn-atom {
+  font-size: clamp(42px, 4.7vw, 60px) !important;
+  line-height: 1.08 !important;
+  text-align: center !important;
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715076839210'] {
+  top: 158px !important;
+  width: min(720px, calc(100% - 40px)) !important;
+  height: auto !important;
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715076839210'] .tn-atom {
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+  text-align: center !important;
+}
+
+#rec745200818 .tn-elem[data-elem-id='1715077322122'] {
+  top: 258px !important;
+  width: 360px !important;
+  height: 58px !important;
+}
+
+#rec745200818 .veles-mortgage-note {
+  left: 50% !important;
+  width: min(720px, calc(100% - 40px));
+  transform: translateX(-50%);
+}
+
+@media (max-width: 980px) {
+  #rec739080578 .t396__artboard,
+  #rec739080578 .t396__carrier,
+  #rec739080578 .t396__filter {
+    height: 420px !important;
+    min-height: 420px !important;
+  }
+
+  #rec745200818 .t396__artboard,
+  #rec745200818 .t396__carrier,
+  #rec745200818 .t396__filter {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715076833089'] {
+    top: 50px !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715076833089'] .tn-atom {
+    font-size: clamp(38px, 6vw, 52px) !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715076839210'] {
+    top: 162px !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715077322122'] {
+    top: 260px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .veles-header-phone {
+    display: none;
+  }
+
+  #rec739080578 .t396__artboard,
+  #rec739080578 .t396__carrier,
+  #rec739080578 .t396__filter {
+    height: 650px !important;
+    min-height: 650px !important;
+  }
+
+  #rec739498252 .t396__artboard,
+  #rec739498252 .t396__carrier,
+  #rec739498252 .t396__filter {
+    height: 132px !important;
+    min-height: 132px !important;
+  }
+
+  /* The SVO callout is one vertically centered text/button group. */
+  #rec795784078 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #rec795784078 .t396__artboard,
+  #rec795784078 .t396__carrier,
+  #rec795784078 .t396__filter {
+    height: 550px !important;
+    min-height: 550px !important;
+  }
+
+  #rec795784078 .tn-elem[data-elem-id='1725696497374'] {
+    top: calc(50% - 16px) !important;
+    left: 15px !important;
+    width: calc(100% - 30px) !important;
+    height: auto !important;
+    transform: translateY(-100%) !important;
+  }
+
+  #rec795784078 .tn-elem[data-elem-id='1725696497374'] .tn-atom {
+    text-align: center !important;
+  }
+
+  #rec795784078 .tn-elem[data-elem-id='1733222662446'] {
+    top: calc(50% + 16px) !important;
+    left: 50% !important;
+    width: min(305px, calc(100% - 30px)) !important;
+    height: 56px !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* T905 switches to a readable single-column card before the 493px case. */
+  #rec739497362 .t905__wrapper {
+    gap: 16px;
+  }
+
+  #rec739497362 .t905__card {
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden;
+    border: 1px solid rgba(21, 61, 42, 0.1);
+    border-radius: 16px;
+    background: #fff;
+  }
+
+  #rec739497362 .t905__content {
+    order: 1;
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 200px;
+  }
+
+  #rec739497362 .t905__image_wrapper,
+  #rec739497362 .t905__image {
+    order: 2;
+    flex: 0 0 210px !important;
+    box-sizing: border-box;
+    width: 100% !important;
+    height: 210px !important;
+    min-height: 210px !important;
+  }
+
+  #rec739497362 .t905__image {
+    padding-bottom: 0 !important;
+  }
+
+  #rec739497362 .t905__title {
+    max-width: 100%;
+    font-size: clamp(18px, 5vw, 22px) !important;
+    line-height: 1.15 !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  #rec745200818 .t396__artboard,
+  #rec745200818 .t396__carrier,
+  #rec745200818 .t396__filter {
+    height: 480px !important;
+    min-height: 480px !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715076833089'] {
+    top: 42px !important;
+    width: calc(100% - 30px) !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715076833089'] .tn-atom {
+    font-size: clamp(32px, 8vw, 38px) !important;
+    line-height: 1.08 !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715076839210'] {
+    top: 148px !important;
+    width: calc(100% - 30px) !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715076839210'] .tn-atom {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715077322122'] {
+    top: 248px !important;
+    width: min(360px, calc(100% - 30px)) !important;
+    height: 56px !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715077322122'] .tn-atom {
+    font-size: 14px !important;
+  }
+
+  #rec745200818 .veles-mortgage-note {
+    left: 50% !important;
+    width: calc(100% - 30px);
+  }
+}
+
+/* The hero ends cleanly after its main content. */
+@media (min-width: 981px) {
+  #rec843022128 .t396__artboard,
+  #rec843022128 .t396__carrier,
+  #rec843022128 .t396__filter {
+    height: calc(100vh - 48px) !important;
+    min-height: 640px !important;
+  }
+
+}
+
+@media (min-width: 641px) and (max-width: 980px) {
+  #rec843022128 .t396__artboard,
+  #rec843022128 .t396__carrier,
+  #rec843022128 .t396__filter {
+    height: 902px !important;
+    min-height: 902px !important;
+  }
+
+}
+
+@media (max-width: 640px) {
+  #rec843022128 .t396__artboard,
+  #rec843022128 .t396__carrier,
+  #rec843022128 .t396__filter {
+    height: 954px !important;
+    min-height: 954px !important;
+  }
+}
+
+@media (max-width: 479px) {
+  #rec745200818 .tn-elem[data-elem-id='1715076833089'] {
+    top: 34px !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715076839210'] {
+    top: 138px !important;
+  }
+
+  #rec745200818 .tn-elem[data-elem-id='1715077322122'] {
+    top: 238px !important;
+  }
+}

@@ -99,6 +99,7 @@ a {
 
 .site-nav a,
 .site-header__right a,
+.site-header__phone,
 .site-header__city {
   color: #fff;
   font-size: 14px;
@@ -173,8 +174,13 @@ a {
   transform: scaleX(1);
 }
 
+/* The phone belongs immediately to the left of the menu button. */
+.site-header__phone + .nav-toggle {
+  margin-left: -16px;
+}
+
 .nav-toggle {
-  display: none;
+  display: block;
   width: 46px;
   height: 46px;
   padding: 13px 10px;
@@ -187,9 +193,10 @@ a {
 .nav-toggle span {
   display: block;
   width: 100%;
-  height: 1px;
+  height: 2px;
   margin: 5px 0;
-  background: #fff;
+  background: #fff !important;
+  border-radius: 2px;
   transition: transform 200ms ease, opacity 200ms ease;
 }
 
@@ -207,6 +214,45 @@ a {
 
 .mobile-nav {
   display: none;
+}
+
+/* The compact menu is available on desktop too, matching the main page header. */
+@media (min-width: 901px) {
+  .mobile-nav {
+    position: fixed;
+    z-index: 1000;
+    top: 80px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    box-sizing: border-box;
+    width: 260px;
+    max-height: 0;
+    padding: 0 24px;
+    overflow: hidden;
+    background: rgba(11, 44, 29, 0.99);
+    box-shadow: 0 24px 50px rgba(5, 24, 15, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 300ms ease, padding 300ms ease, opacity 200ms ease;
+  }
+
+  .mobile-nav.is-open {
+    max-height: 520px;
+    padding-top: 26px;
+    padding-bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-nav a,
+  .mobile-nav > span {
+    color: #fff;
+    font-family: 'Unbounded', 'Montserrat', Arial, sans-serif;
+    font-size: 14px;
+  }
 }
 
 .eyebrow {
@@ -892,10 +938,6 @@ h2 {
 }
 
 @media (max-width: 1120px) {
-  .site-header__phone {
-    display: none;
-  }
-
   .site-nav {
     gap: 18px;
   }
@@ -925,6 +967,12 @@ h2 {
 
   .site-header__right {
     grid-column: 3;
+    gap: 14px;
+  }
+
+  .site-header__phone {
+    display: inline;
+    font-size: 12px;
   }
 
   .nav-toggle {
@@ -958,7 +1006,8 @@ h2 {
     pointer-events: auto;
   }
 
-  .mobile-nav a {
+  .mobile-nav a,
+  .mobile-nav > span {
     color: #fff;
     font-family: 'Unbounded', 'Montserrat', Arial, sans-serif;
     font-size: 15px;
@@ -1038,10 +1087,18 @@ h2 {
 
   .site-header__right {
     margin-left: auto;
+    gap: 10px;
   }
 
   .site-logo {
-    display: none;
+    display: flex;
+    width: 152px;
+    height: 66px;
+  }
+
+  .site-logo img {
+    width: 150px;
+    height: 62px;
   }
 
   .nav-toggle {
@@ -1219,6 +1276,20 @@ h2 {
     align-items: flex-start;
     flex-direction: column;
     gap: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-logo {
+    width: 122px;
+  }
+
+  .site-logo img {
+    width: 120px;
+  }
+
+  .site-header__phone {
+    display: none;
   }
 }
 
