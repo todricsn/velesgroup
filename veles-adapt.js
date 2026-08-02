@@ -158,6 +158,11 @@
     setAtomHTML('rec843022128', '1734699727770', 'Реализованные проекты');
 
     setImage(
+      qs('#rec843022128 .tn-elem[data-elem-id="1734699727749"] img'),
+      'assets/projects-icon.png',
+      'Проекты домов'
+    );
+    setImage(
       qs('#rec843022128 .tn-elem[data-elem-id="1734699727764"] img'),
       'assets/turnkey-icon.png',
       'Строительство дома под ключ'
