@@ -181,10 +181,27 @@
   }
 
   function installHeroForm() {
-    const formAtom = qs(
-      '#rec843022128 .tn-elem[data-elem-id="1734687168225"] .tn-atom'
+    const formElem = qs(
+      '#rec843022128 .tn-elem[data-elem-id="1734687168225"]'
     );
-    if (!formAtom || qs('.veles-consultation-form', formAtom)) return;
+    const formAtom = formElem && qs(':scope > .tn-atom', formElem);
+    if (!formElem || !formAtom) return;
+
+    const removeLegacyFormMarkup = () => {
+      qsa('.tn-atom__inputs-wrapp, .t-form', formElem)
+        .forEach((node) => node.remove());
+    };
+
+    removeLegacyFormMarkup();
+    window.setTimeout(removeLegacyFormMarkup, 250);
+    window.setTimeout(removeLegacyFormMarkup, 1000);
+    if (formElem.dataset.velesFormCleanup !== 'true') {
+      const observer = new MutationObserver(removeLegacyFormMarkup);
+      observer.observe(formElem, { childList: true, subtree: true });
+      formElem.dataset.velesFormCleanup = 'true';
+    }
+
+    if (qs('.veles-consultation-form', formAtom)) return;
 
     formAtom.innerHTML = `
       <form class="veles-consultation-form" novalidate>
@@ -320,6 +337,14 @@
     const builtProjectsTitle = qs('#rec737865448 .t015__title');
     if (builtProjectsTitle) builtProjectsTitle.textContent = 'Реализованные проекты Велес Групп';
 
+    const lifestyleBrand = qs(
+      '#rec745111069 .tn-elem[data-elem-id="1470209944682"] .tn-atom span'
+    );
+    if (lifestyleBrand) {
+      lifestyleBrand.textContent = 'ВЕЛЕС ГРУПП';
+      lifestyleBrand.style.color = '#4f765a';
+    }
+
     const benefitDescriptions = [
       'Мы фиксируем стоимость в договоре, и она не меняется в процессе стройки. Никаких неожиданных доплат — всё просчитываем на берегу.',
       'Благодаря отлаженной логистике и собственной бригаде строим дом за 4–8 месяцев, соблюдая календарный график.',
@@ -363,6 +388,7 @@
     }
 
     replaceVisibleText(/ГЕОГРАФИЯ\s*HOUSE/gi, 'ВЕЛЕС ГРУПП');
+    replaceVisibleText(/ГЕОГРАФИЕЙ\s*HOUSE/gi, 'ВЕЛЕС ГРУПП');
     replaceVisibleText(/ГЕОГРАФИЯ\s*house/gi, 'ВЕЛЕС ГРУПП');
     replaceVisibleText(/География\s*HOUSE/g, 'Велес Групп');
     replaceVisibleText(/География\s*House/g, 'Велес Групп');
